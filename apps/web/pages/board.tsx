@@ -76,5 +76,6 @@ export async function getStaticProps() {
     props: {
       board: boardOrder,
     },
+    revalidate: 10
   };
 }

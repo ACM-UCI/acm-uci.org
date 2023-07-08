@@ -74,6 +74,7 @@ export async function getStaticProps() {
   );
 
   return {
-    props: { problems: quarters[0] }
+    props: { problems: quarters[0] },
+    revalidate: 10
   };
 }
