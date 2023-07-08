@@ -72,7 +72,6 @@ export async function getStaticProps() {
     `*[_type == "weeklyProblem" && year == ${year} && quarter == '${quarter}']
       { ..., ${joinStr} }`
   );
-  console.log(quarters)
 
   return {
     props: { problems: quarters[0] }

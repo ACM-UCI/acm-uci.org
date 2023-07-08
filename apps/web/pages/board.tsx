@@ -31,8 +31,6 @@ export async function getStaticProps() {
     `*[_type == "boardMember" && isActive == true]{ ..., position->, name, "imageUrl": image.asset->url }`
   );
 
-  console.log(board);
-
   let president: Array<Member> = [];
   let vps: Array<Member> = [];
   let directors: Array<Member> = [];
