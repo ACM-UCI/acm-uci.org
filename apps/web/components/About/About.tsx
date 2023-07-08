@@ -16,7 +16,7 @@ export default function About() {
             <Col lg={6}>
               <h2>What is ACM@UCI?</h2>
               <p>
-                ACM@UCI is UCI's official competitive programming club, where
+                ACM@UCI is UCI&apos;s official competitive programming club, where
                 coders of all kinds &mdash; those passionate about competitive
                 programming, trying to get through technical interviews, or
                 hoping to apply what they learn in their algorithms class

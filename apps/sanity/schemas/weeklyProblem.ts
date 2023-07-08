@@ -3,7 +3,7 @@ import { defineArrayMember, defineField, defineType } from 'sanity'
 const quarters = ['Fall', 'Winter', 'Spring']
 
 export default defineType({
-  name: 'weeklyProblems',
+  name: 'weeklyProblem',
   type: 'document',
   title: 'Weekly Problems',
   fields: [

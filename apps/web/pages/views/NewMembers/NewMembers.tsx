@@ -122,8 +122,8 @@ export default function NewMembers() {
                 theme={dracula}
               />
             </div>
-            <p>
-              That's it! While this may seem easy, many more coding paradigms
+            <p className="mt-3">
+              That&apos;s it! While this may seem easy, many more coding paradigms
               and methods are often tied together in order for a problem to be
               solved. With enough practice and time, one can intuitively
               determine which of these methods to use when solving a problem.
@@ -137,7 +137,7 @@ export default function NewMembers() {
             watching YouTube tutorials or reading an algorithms textbook!
           </p>
           <Col>
-            <h3>YouTube Channels</h3>
+            <h4>YouTube Channels</h4>
             <ul>
               <li>
                 <Link href="https://www.youtube.com/@NeetCode">Neetcode</Link>
@@ -150,11 +150,11 @@ export default function NewMembers() {
             </ul>
           </Col>
           <Col>
-            <h3>Books</h3>
+            <h4>Books</h4>
             <ul>
               <li>
                 <Link href="https://cses.fi/book/book.pdf">
-                  Competitive Programmer's Handbook
+                  Competitive Programmer&apos;s Handbook
                 </Link>
               </li>
               <li>

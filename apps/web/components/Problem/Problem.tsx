@@ -6,13 +6,13 @@ interface ProblemProps {
   name: string;
   url: string;
   difficulty: string;
-  solution: File;
+  solutionURL: string;
 }
 export default function Problem({
   name,
   url,
   difficulty,
-  solution,
+  solutionURL,
 }: ProblemProps) {
   let backgroundColor, hoverColor;
   switch (difficulty) {

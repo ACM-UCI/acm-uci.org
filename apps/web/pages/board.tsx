@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Header from "../components/Header/Header";
 import client from "../utils/sanity";
+import { Member } from "../types";
 
 export default function Board({ board }) {
   return (
@@ -30,11 +31,13 @@ export async function getStaticProps() {
     `*[_type == "boardMember" && isActive == true]{ ..., position->, name, "imageUrl": image.asset->url }`
   );
 
-  let president = [];
-  let vps = [];
-  let directors = [];
-  let interns = [];
-  board.forEach((member) => {
+  console.log(board);
+
+  let president: Array<Member> = [];
+  let vps: Array<Member> = [];
+  let directors: Array<Member> = [];
+  let interns: Array<Member> = [];
+  board.forEach((member: Member) => {
     switch (member.position.positionCategory) {
       case "president":
         president.push(member);
@@ -53,7 +56,7 @@ export async function getStaticProps() {
     }
   });
 
-  const compareFunction = (a, b) => {
+  const compareFunction = (a: Member, b: Member) => {
     if (a.name < b.name) {
       return -1;
     } else if (a.name > b.name) {
