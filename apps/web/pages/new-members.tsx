@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Typed from "typed.js";
@@ -55,6 +56,9 @@ export default function NewMembers() {
 
   return (
     <>
+      <Head>
+        <title>New Members | ACM @ UCI</title>
+      </Head>
       <Header headerText="New Member Guide" subHeaderText="" />
       <Container className="p-5">
         <Row className="gx-5 mb-5">

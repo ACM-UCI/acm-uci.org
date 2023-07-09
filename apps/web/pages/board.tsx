@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,6 +9,9 @@ import { Member } from "../types";
 export default function Board({ board }) {
   return (
     <>
+      <Head>
+        <title>Board | ACM @ UCI</title>
+      </Head>
       <Header headerText="The Board" subHeaderText="Agents of ACM" />
       <Container fluid className="p-5">
         <Row className="justify-content-center">

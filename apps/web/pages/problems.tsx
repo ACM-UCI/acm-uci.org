@@ -1,3 +1,4 @@
+import Head from "next/head";
 import client from "../utils/sanity";
 import Accordion from "react-bootstrap/Accordion";
 import Container from "react-bootstrap/Container";
@@ -9,6 +10,9 @@ import { ProblemType } from "../types";
 export default function Problems({ problems }) {
   return (
     <>
+      <Head>
+        <title>Problems | ACM @ UCI</title>
+      </Head>
       <Header
         headerText="Problems"
         subHeaderText="New problems will be posted an hour before each meeting"
