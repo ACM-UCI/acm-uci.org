@@ -113,7 +113,7 @@ export default function NewMembers() {
         </p>
         <Row className="text-center my-5">
           <Col>
-            <Link href="https://vscode.dev">
+            <Link href="https://code.visualstudio.com">
               <Image src={vscodeLogo} alt="Visual Studio Code logo" className={styles.editorLogo} />
             </Link>
           </Col>
