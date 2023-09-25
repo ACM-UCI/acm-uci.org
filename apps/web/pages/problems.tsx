@@ -18,7 +18,7 @@ export default function Problems({ problems }) {
                 subHeaderText="New problems will be posted an hour before each meeting"
             />
             <Container className="my-5">
-                {problems.length === 0 ? (
+                {problems.length !== 0 ? (
                     <Accordion defaultActiveKey="0">
                         {[9, 8, 7, 6, 5, 4, 3, 2, 1].map((num) => {
                             const week = problems[`week${num}`];
