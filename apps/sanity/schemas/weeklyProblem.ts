@@ -1,4 +1,4 @@
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import {defineArrayMember, defineField, defineType} from 'sanity'
 
 const quarters = ['Fall', 'Winter', 'Spring']
 
@@ -19,9 +19,9 @@ export default defineType({
       title: 'Quarter',
       options: {
         list: [
-          { title: 'Fall', value: '0' },
-          { title: 'Winter', value: '1' },
-          { title: 'Spring', value: '2' },
+          {title: 'Fall', value: '0'},
+          {title: 'Winter', value: '1'},
+          {title: 'Spring', value: '2'},
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -47,8 +47,8 @@ export default defineType({
       year: 'year',
       quarter: 'quarter',
     },
-    prepare({ year, quarter }) {
-      return { title: `${quarters[parseInt(quarter)]} ${year}` }
+    prepare({year, quarter}) {
+      return {title: `${quarters[parseInt(quarter)]} ${year}`}
     },
   },
 })

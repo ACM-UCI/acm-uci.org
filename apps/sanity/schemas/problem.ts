@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'problem',
@@ -23,10 +23,10 @@ export default defineType({
       title: 'Difficulty',
       options: {
         list: [
-          { title: 'Easy', value: 'easy' },
-          { title: 'Medium', value: 'medium' },
-          { title: 'Hard', value: 'hard' },
-          { title: "Contest", value: 'contest' }
+          {title: 'Easy', value: 'easy'},
+          {title: 'Medium', value: 'medium'},
+          {title: 'Hard', value: 'hard'},
+          {title: 'Contest', value: 'contest'},
         ],
       },
       validation: (Rule) => Rule.required(),

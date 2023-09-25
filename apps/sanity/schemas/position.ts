@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 enum DirectorCategories {
   President = 'President',
@@ -24,15 +24,15 @@ export default defineType({
       title: 'Position Category',
       options: {
         list: [
-          { title: DirectorCategories.President, value: DirectorCategories.President.toLowerCase() },
+          {title: DirectorCategories.President, value: DirectorCategories.President.toLowerCase()},
           {
             title: DirectorCategories.VP,
             value: DirectorCategories.VP.split(' ')
               .map((s) => s.toLowerCase())
               .join('-'),
           },
-          { title: DirectorCategories.Director, value: DirectorCategories.Director.toLowerCase() },
-          { title: DirectorCategories.Intern, value: DirectorCategories.Intern.toLowerCase() },
+          {title: DirectorCategories.Director, value: DirectorCategories.Director.toLowerCase()},
+          {title: DirectorCategories.Intern, value: DirectorCategories.Intern.toLowerCase()},
         ],
       },
       validation: (Rule) => Rule.required(),
