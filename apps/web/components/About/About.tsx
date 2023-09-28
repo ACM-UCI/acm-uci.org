@@ -37,7 +37,7 @@ export default function About() {
                 </Container>
             </section>
             <Container>
-                <Row className="gx-5 my-5 text-center">
+                <Row className="my-5 text-center">
                     <h2>Competitions</h2>
                     <p>
                         Each year, ACM@UCI competes in several competitve
