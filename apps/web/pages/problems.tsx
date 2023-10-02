@@ -5,9 +5,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Header from "../components/Header/Header";
 import Problem from "../components/Problem/Problem";
+import Presentation from "../components/Presentation/Presentation";
 import { ProblemType } from "../types";
 
-export default function Problems({ problems }) {
+export default function Problems({ problems, presentations }) {
     return (
         <>
             <Head>
@@ -18,48 +19,63 @@ export default function Problems({ problems }) {
                 subHeaderText="New problems will be posted an hour before each meeting"
             />
             <Container className="my-5">
-                {problems.length !== 0 ? (
-                    <Accordion defaultActiveKey="0">
+                {problems.length !== 0 || presentations.length !== 0 ? (
+                    <Accordion>
                         {[9, 8, 7, 6, 5, 4, 3, 2, 1].map((num) => {
                             const week = problems[`week${num}`];
-                            if (week) {
-                                return (
-                                    <Accordion.Item eventKey={`${num}`}>
-                                        <Accordion.Header>
-                                            <h3>{`Week ${num}`}</h3>
-                                        </Accordion.Header>
-                                        <Accordion.Body>
-                                            <Row className="justify-content-center align-items-center">
-                                                {week.map(
-                                                    (problem: ProblemType) => {
-                                                        const {
-                                                            _id,
-                                                            name,
-                                                            url,
-                                                            difficulty,
-                                                            solutionURL,
-                                                        } = problem;
-                                                        return (
-                                                            <Problem
-                                                                key={_id}
-                                                                name={name}
-                                                                url={url}
-                                                                difficulty={
-                                                                    difficulty
-                                                                }
-                                                                solutionURL={
-                                                                    solutionURL
-                                                                }
-                                                            />
-                                                        );
-                                                    }
-                                                )}
-                                            </Row>
-                                        </Accordion.Body>
-                                    </Accordion.Item>
-                                );
-                            }
-                            return null;
+                            const pres = presentations.filter(
+                                (p) => p["week"] == num
+                            );
+                            if (!week && pres.length === 0) return null;
+                            return (
+                                <Accordion.Item eventKey={`${num}`}>
+                                    <Accordion.Header>
+                                        <h3>{`Week ${num}`}</h3>
+                                    </Accordion.Header>
+                                    <Accordion.Body>
+                                        <Row className="justify-content-center align-items-center">
+                                            {pres.map((p) => {
+                                                const { title, url, _id } = p;
+                                                return (
+                                                    <Presentation
+                                                        key={_id}
+                                                        title={title}
+                                                        url={url}
+                                                    />
+                                                );
+                                            })}
+                                            {week
+                                                ? week.map(
+                                                      (
+                                                          problem: ProblemType
+                                                      ) => {
+                                                          const {
+                                                              _id,
+                                                              name,
+                                                              url,
+                                                              difficulty,
+                                                              solutionURL,
+                                                          } = problem;
+                                                          return (
+                                                              <Problem
+                                                                  key={_id}
+                                                                  name={name}
+                                                                  url={url}
+                                                                  difficulty={
+                                                                      difficulty
+                                                                  }
+                                                                  solutionURL={
+                                                                      solutionURL
+                                                                  }
+                                                              />
+                                                          );
+                                                      }
+                                                  )
+                                                : null}
+                                        </Row>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            );
                         })}
                     </Accordion>
                 ) : (
@@ -98,8 +114,15 @@ export async function getStaticProps() {
       { ..., ${joinStr} }`
     );
 
+    const presentations = await client.fetch(
+        `*[_type == "presentation" && quarter == '${quarter}']`
+    );
+
     return {
-        props: { problems: quarters[0] ?? [] },
+        props: {
+            problems: quarters[0] ?? [],
+            presentations: presentations ?? [],
+        },
         revalidate: 10,
     };
 }

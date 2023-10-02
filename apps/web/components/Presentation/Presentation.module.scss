@@ -1,0 +1,19 @@
+.presentation {
+    background-color: rgba(0, 150, 255, 0.75);
+    padding: 0;
+    transition: background-color 0.25s;
+    width: 20rem;
+    min-height: 125px;
+    justify-content: center;
+
+    a {
+        color: white;
+        padding: 2rem 3rem;
+        text-decoration: none;
+    }
+
+    &:hover {
+        background-color: rgba(0, 150, 255, 1);
+        transition: background-color 0.25s;
+    }
+}
