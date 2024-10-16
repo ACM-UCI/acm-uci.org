@@ -13,8 +13,8 @@ export default function Landing() {
                 subHeaderText="Learn about algorithms and improve your interview skills"
             >
                 <strong>
-                    Meetings will be on Tuesdays and Thursdays from 6:30pm to
-                    8:30pm at ICS 428!
+                    Meetings will be on Mondays and Wednesdays from 6:00pm to
+                    8:00pm at DBH 3011!
                 </strong>
             </Header>
             <About />
