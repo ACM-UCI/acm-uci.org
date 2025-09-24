@@ -36,7 +36,7 @@ function getCurrentQuarterAndYear() {
 }
 
 function PracticeBanner() {
-  let practice_doodle = import.meta.env.BASE_URL + "/practice/practice_doodle.jpg";
+  let practice_doodle = "/practice/practice_doodle.jpg";
   let practice_banner_main_header = "New practice problems and presentations at every meeting"
   let practice_banner_sub_header = "Try your hand at the easy problems, then see how you fare with the harder ones!"
 

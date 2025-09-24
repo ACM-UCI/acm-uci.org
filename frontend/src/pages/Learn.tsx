@@ -49,7 +49,7 @@ int main() {
 
 function LearnBanner() {
 
-    let learn_doodle = import.meta.env.BASE_URL + "/learn/learn_doodle.jpg";
+    let learn_doodle = "/learn/learn_doodle.jpg";
     let learn_banner_main_header = "Competitive programming is a sport anyone can do";
     let learn_banner_sub_header = "You don’t need fancy software or crazy math skills to succeed - just personal drive and a bit of guidance!";
 
@@ -149,7 +149,7 @@ export default function Learn() {
                     <Col>
                         <Link to="https://code.visualstudio.com">
                             <Image
-                                src={import.meta.env.BASE_URL + "/learn/VSCode.png"}
+                                src={"/learn/VSCode.png"}
                                 alt="Visual Studio Code logo"
                                 className="IDE_image"
                             />
@@ -158,7 +158,7 @@ export default function Learn() {
                     <Col>
                         <Link to="https://www.vim.org/">
                             <Image
-                                src={import.meta.env.BASE_URL + "/learn/Vim.png"}
+                                src={"/learn/Vim.png"}
                                 alt="Vim logo"
                                 className="IDE_image"
                             />
@@ -167,7 +167,7 @@ export default function Learn() {
                     <Col>
                         <Link to="https://neovim.io/">
                             <Image
-                                src={import.meta.env.BASE_URL + "/learn/Neovim.svg"}
+                                src={"/learn/Neovim.svg"}
                                 alt="Neovim logo"
                                 className="IDE_image"
                             />
@@ -176,7 +176,7 @@ export default function Learn() {
                     <Col>
                         <Link to="https://www.gnu.org/software/emacs/">
                             <Image
-                                src={import.meta.env.BASE_URL + "/learn/Emacs.png"}
+                                src={"/learn/Emacs.png"}
                                 alt="Emacs logo"
                                 className="IDE_image"
                             />

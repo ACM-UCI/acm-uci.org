@@ -23,13 +23,12 @@ function TopBanner() {
   );
 }
 
- //<img key={index} src={import.meta.env.BASE_URL + image} className="top_banner_image" />
 function WhatIsACM() {
   let what_is_acm = "What Is ACM?"
   let acm_short_description = "ACM@UCI is UCI’s official competitive programming club on campus."
   let acm_meeting_time_loc = "Meetings are every Wednesday from 6pm to 8pm in DBH 3011"
 
-  let acm_with_balloons = import.meta.env.BASE_URL + "/home/what_is_acm/acm_balloons_doodle.png"
+  let acm_with_balloons = "/home/what_is_acm/acm_balloons_doodle.png"
 
   return (
 <div className="custom_font what_is_acm_wrapper shadow rounded">
@@ -83,7 +82,7 @@ function ProgrammingLanguageDisplay() {
     <div className="programming_language_wrapper">
       {programming_language_images.map((url: string, id: number) => (
         <React.Fragment key={id}>
-          <img src={import.meta.env.BASE_URL + url} className="programming_language_image" />
+          <img src={url} className="programming_language_image" />
           {id < programming_language_images.length - 1 && (
             <div className="vertical_spacer" />
           )}
@@ -113,14 +112,14 @@ function ClubPreview() {
   let club_preview_header = "Come Check Us Out!"
 
   // maybe today - images and text defined in a separate document (then just import all and like src=images.newcomer_img, etc)
-  let newcomers_img = import.meta.env.BASE_URL + "/home/club_preview/newcomers.jpg"
+  let newcomers_img = "/home/club_preview/newcomers.jpg"
   let newcomers_text = "To start competitive programming, begin by learning a programming language, preferably C++, Java, or Python."
 
-  let leetcode_img = import.meta.env.BASE_URL + "/home/club_preview/leetcode.webp"
-  let codeforces_img = import.meta.env.BASE_URL + "/home/club_preview/codeforces.png"
+  let leetcode_img = "/home/club_preview/leetcode.webp"
+  let codeforces_img = "/home/club_preview/codeforces.png"
   let practice_text = "Practice on platforms like Codeforces, LeetCode, or Kattis, focusing on solving problems of increasing difficulty."
 
-  let compete_img = import.meta.env.BASE_URL + "/home/club_preview/compete.png"
+  let compete_img = "/home/club_preview/compete.png"
   let compete_text = "Every year, ACM takes its top members to participate in the International Collegiate Programming Competition (ICPC). Tryouts open in the Fall."
 
   return (
@@ -137,7 +136,7 @@ function ClubPreview() {
       <Col xs={12} md={8} className="text-end">
         <div className="cp_text font-size-4">
           <h1 className="font-size-4 custom_paragraph_font">{newcomers_text}&nbsp;</h1>
-          <a href={import.meta.env.BASE_URL + "/#learn" + "#top"}>LEARN MORE</a>
+          <a href={"/#learn" + "#top"}>LEARN MORE</a>
         </div>
       </Col>
     </Row>
@@ -150,7 +149,7 @@ function ClubPreview() {
       <Col xs={12} md={8} className="text-start">
         <div className="cp_text font-size-4">
           <h1 className="custom_paragraph_font font-size-4">{practice_text}&nbsp;</h1>
-          <a href={import.meta.env.BASE_URL + "/#practice" + "#top"}>READ MORE</a>
+          <a href={"/#practice" + "#top"}>READ MORE</a>
         </div>
       </Col>
       <Col xs={12} md={4} className="d-flex justify-content-center">
@@ -170,7 +169,7 @@ function ClubPreview() {
       <Col xs={12} md={8} className="text-end">
         <div className="cp_text font-size-4">
           <h1 className="custom_paragraph_font font-size-4">{compete_text}&nbsp;</h1>
-          <a href={import.meta.env.BASE_URL + "/#compete" + "#top"}>SEE MORE</a>
+          <a href={"/#compete" + "#top"}>SEE MORE</a>
         </div>
       </Col>
     </Row>
@@ -186,7 +185,7 @@ function OurTeam() {
   let our_team = "OUR TEAM"
   let team_shoutout = "The club wouldn’t be possible without all our amazing board members and advisors. Check them out here!   "
 
-  let team_symbol = import.meta.env.BASE_URL + "/home/our_team/team_icon.jpg"
+  let team_symbol = "/home/our_team/team_icon.jpg"
 
   return (
 <div className="our_team_wrapper">
@@ -195,7 +194,7 @@ function OurTeam() {
     <img src={team_symbol} alt="" className="team_symbol" />
     <h1 className="font-size-4">
       {team_shoutout}{" "}
-      <a href={import.meta.env.BASE_URL + "/#board" + "#top"}>VIEW BOARD</a>
+      <a href={"/#board" + "#top"}>VIEW BOARD</a>
     </h1>
     <img src={team_symbol} alt="" className="team_symbol" />
   </div>
