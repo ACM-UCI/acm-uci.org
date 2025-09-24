@@ -149,7 +149,7 @@ function ClubPreview() {
       <Col xs={12} md={8} className="text-start">
         <div className="cp_text font-size-4">
           <h1 className="custom_paragraph_font font-size-4">{practice_text}&nbsp;</h1>
-          <a href={"/practice?scrollTo=practice-top"}>READ MORE</a>
+          <a href={"/#practice?scrollTo=practice-top"}>READ MORE</a>
         </div>
       </Col>
       <Col xs={12} md={4} className="d-flex justify-content-center">
