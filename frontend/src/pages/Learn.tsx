@@ -54,7 +54,7 @@ function LearnBanner() {
     let learn_banner_sub_header = "You don’t need fancy software or crazy math skills to succeed - just personal drive and a bit of guidance!";
 
     return (
-        <div id="top" className="learn_banner_wrapper d-flex justify-content-center align-items-center">
+        <div id="learn-top" className="learn_banner_wrapper d-flex justify-content-center align-items-center">
             <Row className="align-items-center">
                 <Col xs={12} md={8} className="text-left">
                     <h1 className="static-font-size-10">{learn_banner_main_header}</h1>

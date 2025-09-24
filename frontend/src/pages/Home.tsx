@@ -136,7 +136,7 @@ function ClubPreview() {
       <Col xs={12} md={8} className="text-end">
         <div className="cp_text font-size-4">
           <h1 className="font-size-4 custom_paragraph_font">{newcomers_text}&nbsp;</h1>
-          <a href={"/#learn" + "#top"}>LEARN MORE</a>
+          <a href={"/#learn?scrollTo=learn-top"}>LEARN MORE</a>
         </div>
       </Col>
     </Row>
@@ -169,7 +169,7 @@ function ClubPreview() {
       <Col xs={12} md={8} className="text-end">
         <div className="cp_text font-size-4">
           <h1 className="custom_paragraph_font font-size-4">{compete_text}&nbsp;</h1>
-          <a href={"/#compete" + "#top"}>SEE MORE</a>
+          <a href={"/#compete?scrollTo=compete-top"}>SEE MORE</a>
         </div>
       </Col>
     </Row>
@@ -194,7 +194,7 @@ function OurTeam() {
     <img src={team_symbol} alt="" className="team_symbol" />
     <h1 className="font-size-4">
       {team_shoutout}{" "}
-      <a href={"/#board" + "#top"}>VIEW BOARD</a>
+      <a href={"/#board?scrollTo=board-top"}>VIEW BOARD</a>
     </h1>
     <img src={team_symbol} alt="" className="team_symbol" />
   </div>
