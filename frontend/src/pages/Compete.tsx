@@ -97,7 +97,7 @@ function NotSatisfied() {
   return (
     <div className="not_satisfied_wrapper">
       <h1 className="font-size-6">Still Not Satisified?</h1>
-      <h1 className=" custom_paragraph_font2 font-size-3">Check out our <a href={"/#learn" + "#top"}>learn</a> tab for additional resources and our <a href={"/#practice" + "#top"}>practice</a> tab for presentations and practice problems!</h1>
+      <h1 className=" custom_paragraph_font2 font-size-3">Check out our <a href={"/#learn" + "#top"}>learn</a> tab for additional resources and our <a href={"/practice?scrollTo=practice-top"}>practice</a> tab for presentations and practice problems!</h1>
     </div>
   );
 

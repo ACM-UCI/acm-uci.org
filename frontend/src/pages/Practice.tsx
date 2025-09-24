@@ -41,7 +41,7 @@ function PracticeBanner() {
   let practice_banner_sub_header = "Try your hand at the easy problems, then see how you fare with the harder ones!"
 
   return (
-    <div id="top" className="practice_banner_wrapper d-flex justify-content-center align-items-center">
+    <div id="practice-top" className="practice_banner_wrapper d-flex justify-content-center align-items-center">
       <Row className="align-items-center">
         <Col xs={12} md={4} className="d-flex justify-content-center">
           <img src={practice_doodle} className="subpage_banner_image"></img>
