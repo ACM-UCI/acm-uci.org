@@ -16,7 +16,7 @@ function TopBanner() {
   return (
     <div className="banner_header_wrapper">
       {top_banner_images.map((image: string, index: number) => (
-        <SpinningImage key={index} src={import.meta.env.BASE_URL + image} />
+        <SpinningImage key={index} src={image} />
        
       ))}
     </div>
