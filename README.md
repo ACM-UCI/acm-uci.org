@@ -9,13 +9,9 @@ Here's the technical details:
 
 The website was built primarily using React (and React Router), Vite, Bootstrap-React (yay scss!) and Typescript. 
 
-![TypeScript](https://simpleicons.org/?modal=icon&q=typescript)
-
-![React](https://simpleicons.org/?modal=icon&q=react)
-
-![Bootstrap](https://simpleicons.org/?modal=icon&q=bootstrap)
-
-![Vite](https://simpleicons.org/?modal=icon&q=vite)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=ts,react,nodejs,git,html,css,bootstrap,vite,sass&perline=9" />
+</p>
 
 File/folder structure is pretty straightforward...
 - separate files for each page (a home page and 5 sub pages)
