@@ -1,4 +1,4 @@
-# This is the source code for the official ACM@UCI website.
+# This is the source code for the official ACM@UCI website! :D 
 
 Updates as of Fall 2025:
 
