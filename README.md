@@ -25,6 +25,6 @@ See this link for a tutorial on how to use Sanity: https://www.sanity.io/docs/sa
 
 The website is currently being deployed on Vercel, with the domain name originating from Domain.com.
 
-If you find a bug on the website, or wish to contribute to the website's development in away, please send a message in the "acm-help-desk" channel on ACM's discord.
+If you find a bug on the website, or wish to contribute to the website's development in any way, please send a message in the "acm-help-desk" channel on ACM's discord.
 
 Thank you! :D 
