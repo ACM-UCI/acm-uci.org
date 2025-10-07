@@ -84,16 +84,17 @@ export default function Board() {
       .catch(console.error);
   }, []);
 
-  const executive = {
-    president: members.find((m) => m.position === "president"),
-    internalVp: members.find((m) => m.position === "internal-vp"),
-    externalVp: members.find((m) => m.position === "external-vp"),
-  };
+  const executive = [
+    "president",
+    "internal-vp",
+    "external-vp",
+    "treasurer",
+  ].map((pos) => members.find((m) => m.position === pos));
 
   const support = [
     "secretary",
     "events-coordinator",
-    "treasurer",
+    "problem-writer",
     "webmaster",
   ].map((pos) => members.find((m) => m.position === pos));
 
@@ -106,7 +107,7 @@ export default function Board() {
     <div>
       <BoardBanner></BoardBanner>
       <Container>
-      <Executive {...executive} />
+      <Executive members={executive} />
       <Supporting members={support} />
       <Advisory members={advisory} />
       <ThankYouMessage />
@@ -176,15 +177,17 @@ function MemberCard({
 
   );
 };
-
+/* 
 const Executive = ({
   president,
   internalVp,
   externalVp,
+  treasurer,
 }: {
   president?: BoardMember;
   internalVp?: BoardMember;
   externalVp?: BoardMember;
+  treasurer?: BoardMember;
 }) => (
   <div className="executive_wrapper my-5">
     <Col>
@@ -194,6 +197,23 @@ const Executive = ({
   <Col xs={12} md={4}><MemberCard member={president} /></Col>
   <Col xs={12} md={4}><MemberCard member={internalVp} /></Col>
   <Col xs={12} md={4}><MemberCard member={externalVp} /></Col>
+</Row>
+      </div>
+    </Col>
+  </div>
+); */
+
+const Executive = ({ members }: { members: (BoardMember | undefined)[] }) => (
+  <div className="executive_wrapper my-5">
+    <Col>
+      <h1 className="section-title">Executive Staff</h1>
+      <div className="executive_staff mt-4">
+<Row>
+  {members.map((m, i) => (
+    <Col key={i} xs={12} sm={12} md={3}>
+      <MemberCard member={m} />
+    </Col>
+  ))}
 </Row>
       </div>
     </Col>

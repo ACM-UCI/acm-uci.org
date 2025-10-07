@@ -21,6 +21,7 @@ options: {
     { title: 'Internal VP', value: 'internal-vp' },
     { title: 'External VP', value: 'external-vp' },
     { title: 'Treasurer', value: 'treasurer' },
+    { title: 'Problem Writer', value: 'problem-writer' },
     { title: 'Webmaster', value: 'webmaster' },
     { title: 'Secretary', value: 'secretary' },
     { title: 'Events Coordinator', value: 'events-coordinator' },
