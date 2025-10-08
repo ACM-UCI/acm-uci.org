@@ -9,7 +9,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HashRouter>
       <App />
-      <Analytics />
+      <Analytics mode="production"/>
     </HashRouter>
   </StrictMode>,
 )
