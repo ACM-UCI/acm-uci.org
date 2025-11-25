@@ -17,53 +17,107 @@ function TopBanner() {
     <div className="banner_header_wrapper">
       {top_banner_images.map((image: string, index: number) => (
         <SpinningImage key={index} src={image} />
-       
+
       ))}
     </div>
   );
 }
 
-function WhatIsACM() {
-  let what_is_acm = "What Is ACM?"
-  let acm_short_description = "ACM@UCI is UCI’s official competitive programming club on campus."
-  let acm_meeting_time_loc = "Meetings are every Wednesday from 6pm to 8pm in DBH 4011"
 
-  let acm_with_balloons = "/home/what_is_acm/acm_balloons_doodle.png"
+// function WhatIsACM() {
+//   let what_is_acm = "What Is ACM?"
+//   let acm_short_description = "ACM@UCI is UCI’s official competitive programming club on campus."
+//   let acm_meeting_time_loc = "Meetings are every Wednesday from 6pm to 8pm in DBH 4011"
+
+//   let acm_with_balloons = "/home/what_is_acm/acm_balloons_doodle.png"
+
+//   return (
+// <div className="custom_font what_is_acm_wrapper shadow rounded">
+//   <Row className="align-items-center">
+//     {/* Title always on top */}
+//     <Col xs={12} className="order-1 text-center text-md-start">
+//       <h1 className="font-size-14 what_is_acm_title">{what_is_acm}</h1>
+//     </Col>
+
+//     {/* Image (on mobile: comes second) */}
+//     <Col xs={12} md={6} className="order-2 order-md-2 d-flex justify-content-center">
+//       <img
+//         src={acm_with_balloons}
+//         className="what_is_acm_image img-fluid"
+//         alt="ACM with balloons"
+//       />
+//     </Col>
+
+//     {/* Rest of text (on mobile: comes after image) */}
+//     <Col xs={12} md={6} className="order-3 order-md-1 text-md-start">
+//       <div className="what_is_acm_text">
+//         <div style={{ height: "4vh" }}></div>
+//         <h1 className="font-size-6">{acm_short_description}</h1>
+//         <hr />
+//         <h1 className="font-size-6">{acm_meeting_time_loc}</h1>
+//         <div style={{ height: "8vh" }}></div>
+//       </div>
+//     </Col>
+//   </Row>
+// </div>
+//   );
+// }
+
+// used a bit of AI (:'D) maybe I'll update it...
+function WhatIsACM() {
+  const what_is_acm = "What Is ACM?";
+  const acm_short_description =
+    "ACM@UCI is UCI’s official competitive programming club on campus.";
+  const acm_meeting_time_loc =
+    "Meetings are every Wednesday from 6pm to 8pm in DBH 4011";
+  const acm_with_balloons = "/home/what_is_acm/acm_balloons_doodle.png";
 
   return (
-<div className="custom_font what_is_acm_wrapper shadow rounded">
-  <Row className="align-items-center">
-    {/* Title always on top */}
-    <Col xs={12} className="order-1 text-center text-md-start">
-      <h1 className="font-size-14 what_is_acm_title">{what_is_acm}</h1>
-    </Col>
+    <div className="p-4" style={{ background: "white" }}>
+      <Row className="align-items-center">
 
-    {/* Image (on mobile: comes second) */}
-    <Col xs={12} md={6} className="order-2 order-md-2 d-flex justify-content-center">
-      <img
-        src={acm_with_balloons}
-        className="what_is_acm_image img-fluid"
-        alt="ACM with balloons"
-      />
-    </Col>
+        {/* Image stays at left */}
+        <Col
+          xs={12}
+          md={4}
+          className="d-flex justify-content-center mb-3 mb-md-0"
+        >
+          <img
+            src={acm_with_balloons}
+            alt="ACM with balloons"
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              objectFit: "contain",
+            }}
+          />
+        </Col>
 
-    {/* Rest of text (on mobile: comes after image) */}
-    <Col xs={12} md={6} className="order-3 order-md-1 text-md-start">
-      <div className="what_is_acm_text">
-        <div style={{ height: "4vh" }}></div>
-        <h1 className="font-size-6">{acm_short_description}</h1>
-        <hr />
-        <h1 className="font-size-6">{acm_meeting_time_loc}</h1>
-        <div style={{ height: "8vh" }}></div>
-      </div>
-    </Col>
-  </Row>
-</div>
+        {/* Title + Text Box */}
+        <Col xs={12} md={8}>
+          {/* Title centered above text box */}
+          <h1 className="font-size-14 what_is_acm_title">{what_is_acm}</h1>
 
+          {/* Light grey box */}
+          <div
+            style={{
+              background: "#f2f2f2",
+              padding: "2rem 6rem",
+              borderRadius: "8px",
+            }}
+          >
+            <h1 className="custom_paragraph_font2 font-size-4">{acm_short_description}</h1>
+            <h1 className="custom_paragraph_font2 font-size-4">{acm_meeting_time_loc}</h1>
+          </div>
+        </Col>
 
-
+      </Row>
+    </div>
   );
 }
+
+
+
 
 function ProgrammingLanguageDisplay() {
 
@@ -79,15 +133,28 @@ function ProgrammingLanguageDisplay() {
   ];
 
   return (
-    <div className="programming_language_wrapper">
-      {programming_language_images.map((url: string, id: number) => (
-        <React.Fragment key={id}>
-          <img src={url} className="programming_language_image" />
-          {id < programming_language_images.length - 1 && (
-            <div className="vertical_spacer" />
-          )}
-        </React.Fragment>
-      ))}
+    <div>
+      {/* this guy is just a red line addition */}
+      <div
+        style={{
+          width: "90%",
+          height: "0.5vh",
+          backgroundColor: "#B33E25",
+          borderRadius: "999px",
+          margin: "1rem auto"
+        }}
+      ></div>
+      <div className="programming_language_wrapper">
+
+        {programming_language_images.map((url: string, id: number) => (
+          <React.Fragment key={id}>
+            <img src={url} className="programming_language_image" />
+            {id < programming_language_images.length - 1 && (
+              <div className="vertical_spacer" />
+            )}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
 
   )
@@ -123,58 +190,58 @@ function ClubPreview() {
   let compete_text = "Every year, ACM takes its top members to participate in the International Collegiate Programming Competition (ICPC). Tryouts open in the Fall."
 
   return (
-     <div className="club_preview_wrapper">
-  <h1 className="font-size-8 text-start">{club_preview_header}</h1>
+    <div className="club_preview_wrapper">
+      <h1 className="font-size-8 text-start">{club_preview_header}</h1>
 
-  {/* Newcomers */}
-  <div className="cp_newcomer_wrapper rounded">
-    <h1 className="font-size-8 text-start">Newcomers</h1>
-    <Row className="align-items-center cp_section">
-      <Col xs={12} md={4}>
-        <img src={newcomers_img} className="img-fluid" alt="Newcomers" />
-      </Col>
-      <Col xs={12} md={8} className="text-end">
-        <div className="cp_text font-size-4">
-          <h1 className="font-size-4 custom_paragraph_font">{newcomers_text}&nbsp;</h1>
-          <a href={"/#learn?scrollTo=learn-top"}>LEARN MORE</a>
-        </div>
-      </Col>
-    </Row>
-  </div>
+      {/* Newcomers */}
+      <div className="cp_newcomer_wrapper rounded">
+        <h1 className="font-size-8 text-start">Newcomers</h1>
+        <Row className="align-items-center cp_section">
+          <Col xs={12} md={4}>
+            <img src={newcomers_img} className="img-fluid" alt="Newcomers" />
+          </Col>
+          <Col xs={12} md={8} className="text-end">
+            <div className="cp_text font-size-4">
+              <h1 className="font-size-4 custom_paragraph_font">{newcomers_text}&nbsp;</h1>
+              <a href={"/#learn?scrollTo=learn-top"}>LEARN MORE</a>
+            </div>
+          </Col>
+        </Row>
+      </div>
 
-  {/* Practice */}
-  <div className="cp_practice_wrapper rounded">
-    <h1 className="font-size-8 text-start">Practice</h1>
-    <Row className="align-items-center cp_section">
-      <Col xs={12} md={8} className="text-start">
-        <div className="cp_text font-size-4">
-          <h1 className="custom_paragraph_font font-size-4">{practice_text}&nbsp;</h1>
-          <a href={"/#practice?scrollTo=practice-top"}>READ MORE</a>
-        </div>
-      </Col>
-      <Col xs={12} md={4} className="d-flex justify-content-center">
-        <img src={leetcode_img} className="img-fluid me-2 practice-img" alt="LeetCode" />
-        <img src={codeforces_img} className="img-fluid practice-img" alt="Codeforces" />
-      </Col>
-    </Row>
-  </div>
+      {/* Practice */}
+      <div className="cp_practice_wrapper rounded">
+        <h1 className="font-size-8 text-start">Practice</h1>
+        <Row className="align-items-center cp_section">
+          <Col xs={12} md={8} className="text-start">
+            <div className="cp_text font-size-4">
+              <h1 className="custom_paragraph_font font-size-4">{practice_text}&nbsp;</h1>
+              <a href={"/#practice?scrollTo=practice-top"}>READ MORE</a>
+            </div>
+          </Col>
+          <Col xs={12} md={4} className="d-flex justify-content-center">
+            <img src={leetcode_img} className="img-fluid me-2 practice-img" alt="LeetCode" />
+            <img src={codeforces_img} className="img-fluid practice-img" alt="Codeforces" />
+          </Col>
+        </Row>
+      </div>
 
-  {/* Compete */}
-  <div className="cp_compete_wrapper rounded">
-    <h1 className="font-size-8 text-start">Compete</h1>
-    <Row className="align-items-center cp_section">
-      <Col xs={12} md={4}>
-        <img src={compete_img} className="compete-img img-fluid" alt="Compete" />
-      </Col>
-      <Col xs={12} md={8} className="text-end">
-        <div className="cp_text font-size-4">
-          <h1 className="custom_paragraph_font font-size-4">{compete_text}&nbsp;</h1>
-          <a href={"/#compete?scrollTo=compete-top"}>SEE MORE</a>
-        </div>
-      </Col>
-    </Row>
-  </div>
-</div>
+      {/* Compete */}
+      <div className="cp_compete_wrapper rounded">
+        <h1 className="font-size-8 text-start">Compete</h1>
+        <Row className="align-items-center cp_section">
+          <Col xs={12} md={4}>
+            <img src={compete_img} className="compete-img img-fluid" alt="Compete" />
+          </Col>
+          <Col xs={12} md={8} className="text-end">
+            <div className="cp_text font-size-4">
+              <h1 className="custom_paragraph_font font-size-4">{compete_text}&nbsp;</h1>
+              <a href={"/#compete?scrollTo=compete-top"}>SEE MORE</a>
+            </div>
+          </Col>
+        </Row>
+      </div>
+    </div>
 
   );
 
@@ -188,17 +255,17 @@ function OurTeam() {
   let team_symbol = "/home/our_team/team_icon.jpg"
 
   return (
-<div className="our_team_wrapper">
-  <h1 className="font-size-8">{our_team}</h1>
-  <div className="our_team_row">
-    <img src={team_symbol} alt="" className="team_symbol" />
-    <h1 className="font-size-4">
-      {team_shoutout}{" "}
-      <a href={"/#board?scrollTo=board-top"}>VIEW BOARD</a>
-    </h1>
-    <img src={team_symbol} alt="" className="team_symbol" />
-  </div>
-</div>
+    <div className="our_team_wrapper">
+      <h1 className="font-size-8">{our_team}</h1>
+      <div className="our_team_row">
+        <img src={team_symbol} alt="" className="team_symbol" />
+        <h1 className="font-size-4">
+          {team_shoutout}{" "}
+          <a href={"/#board?scrollTo=board-top"}>VIEW BOARD</a>
+        </h1>
+        <img src={team_symbol} alt="" className="team_symbol" />
+      </div>
+    </div>
 
 
   );
