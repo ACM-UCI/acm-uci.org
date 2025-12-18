@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#acmcenterlogo {
+    max-width: 70px;
+    filter: drop-shadow(0 0 15px #0ff);
+
+}
+
+#navbar-logo h1 {
+    text-shadow: 0 0 25px #0ff;
+    color: white;
+}
+
+#navbar-logo {
+    width: 100%;
+    height: 100px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: 
+#162036
+;
+    margin: 0; 
+}  
+
+#navbar {
+    display: flex; 
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 150px;
+}
+
+#nav-dropdown {
+    position: absolute;
+    right: 30px;
+    top: 20px; 
+    height: 60px;
+    width: 60px;
+    display: none; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#dropdown-line {
+    width: 50px; 
+    height: 5px; 
+    background-color: white;
+}
+
+#navbar-options {
+    width: 100%;
+    height: 50px;
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 2px solid white;
+    margin: 0; 
+    padding: 0; 
+}
+
+@media (max-width: 1024px) {
+    #navbar-options {
+        display: none; 
+    }
+
+    #navbar {
+        height: 100px; 
+    }
+
+    #navbar-logo {
+        padding-left: 30px; 
+        justify-content: flex-start;
+    }
+
+    #nav-dropdown {
+        display: flex; 
+    }
+
+    #navbar-popup {
+        display: none;
+    }
+}
+
+
+#learn-nav, #practice-nav, #compete-nav, 
+#board-nav, #contact-nav {
+    height: 50px;
+    width: 20%;
+    
+    background-color: #26478c;
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar-popup {
+    background-color: #ffd86b;
+    border-bottom: white solid 4px;
+    border-left: white solid 4px;
+    border-right: white solid 4px;
+    width: 20%;
+    height: 100px;
+    position: absolute;
+    left: 0px;
+    top: 150px; 
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: Arial;
+    z-index: 4;
+    font-size: 30px;
+}
+
+
+#central-content {
+    width: 100%;
+    height: 600px;
+    background-color: #50c6de;
+     position: absolute;
+     top: 150px;
+    display: flex;
+    justify-content: center;
+    border-bottom: #162036 solid 4px;
+    z-index: 0;
+}
+
+#central-content img {
+    width: 100%;
+    height: 595px;
+    object-fit: cover;
+    filter: brightness(100);
+    z-index: 1;
+}
+
+#cc-text-wrapper {
+    width: 50%;
+    height: 400px;
+     position: absolute;
+     top: 100px;
+    color: #162036;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border: #162036 solid 4px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    z-index: 4;
+
+
+}
+
+#cc-text-wrapper h1 {
+    font-size: 80px;
+}
+
+#cc-text-wrapper h2 {
+    font-size: 30px;
+}
+#cc-text-wrapper p {
+    font-size: 20px;
+}
+
+/*
+#books-bg {
+    width: 100%;
+    height: 600px;
+     position: absolute;
+     top: 150px;
+     z-index: 6;
+}
+*/
+
+
+#main-content {
+    width: 100%;
+    height: 2000px;
+    background-color: white;
+     position: absolute;
+     top: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+#main-content h1 {
+    font-size: 70px;
+}
+
+#main-content p {
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#main-content h3 {
+    font-size: 35px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#mc-part1 {
+    width: 100%;
+    height: 1000px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 150px;
+    padding-top: 50px;
+}
+
+.left-text {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#fake-terminal {
+    background-color: darkblue;
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#terminal-top {
+    background-color: black;
+    width: 99%;
+    border-radius: 20px;
+    height: 40px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.tdot {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+#terminal-center {
+    position: absolute;
+    top: 140px;
+    width: 98%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 30px;
+}
+
+#mc-part2 {
+    width: 100%;
+    height: 800px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 150px;
+}
+
+#mc-part2 h1, #mc-part2 h3, #mc-part3 h3 {
+    margin-bottom: 0;
+}
+
+#ide-layout {
+    margin: 50px auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#ide-layout img {
+    width: 300px;
+    height: 300px;
+}
+
+#mc-part3 {
+    width: 100%;
+    height: 800px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 150px;
+}
+
+#fake-ide {
+    width: 80%;
+    background-color: #ffd86b;
+    padding: 2px 2px;
+    border-radius: 20px;
+     font-size: 20px;
+}
+
+#fake-ide button {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 25px;
+   
+}
+
+#mc-part4 {
+        width: 100%;
+    height: 1000px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 150px;
+    padding-bottom: 50px;
+}
+
+#resources {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.resource-content {
+    margin: 30px;
+}
+
+#book-resource, #youtube-resource, #websites-resource {
+    width: 25vw;
+    height: auto;
+    background-color: pink;
+    border-radius: 10px;
+    position: relative;
+    padding-top: 60px;
+
+
+}
+
+.resource-top {
+    position: absolute;
+    top: 0;
+    width: 25vw;
+    height: 60px;
+    background-color: red;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5px;
+    text-align: center;
+}
+
+.resource-top p {
+    margin: 15px 30px;
+}
