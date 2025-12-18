@@ -88,7 +88,7 @@ export default function Home2() {
 
       {/* ---------------- HERO ---------------- */}
 
-      <div id="central-content">
+      <div id="home-central-content">
         <img src="home2/acmbackground.png" />
         <div id="central-content-div">
           <div id="cc-header-div">
