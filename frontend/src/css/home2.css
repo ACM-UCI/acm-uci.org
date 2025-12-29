@@ -39,7 +39,7 @@ body {
     position: absolute;
     width: 100%;
     height: 150px;
-    z-index: 2;
+    z-index: 8;
 }
 
 #nav-dropdown {
@@ -52,6 +52,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    z-index: 10;
 }
 
 #dropdown-line {
@@ -125,6 +126,66 @@ body {
     font-family: Arial;
     z-index: 4;
     font-size: 30px;
+}
+
+
+/* ================= SIDE PANEL ================= */
+
+#side-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 20vw;
+  min-width: 240px;
+  height: 100vh;
+
+  background-color: #162036;
+  color: white;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  z-index: 6;
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
+}
+
+#side-panel.open {
+  transform: translateX(0);
+}
+
+/* Overlay (click to close) */
+#side-panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  z-index: 4;
+}
+
+#side-panel-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Panel items */
+.side-panel-item {
+  padding: 20px 30px;
+  font-size: 24px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.side-panel-item:hover {
+  background-color: white;
+  color: #162036;
 }
 
 
@@ -246,22 +307,24 @@ body {
 
 }
 
-#speech-bubble #sb-bg {
+#sb-bg {
     width: 150px;
     height: auto;
     object-fit: cover;
     border-radius: 10px;
     position: absolute;
+    z-index: 40;
     filter: grayscale(100%) brightness(150%)
 }
 
-#speech-bubble #sb-pl {
+#sb-pl {
     width: 60px;
     top: 30px;
     left: 45px;
     height: auto;
     object-fit: cover;
     position: absolute;
+    z-index: 45;
 }
 
 
@@ -413,3 +476,27 @@ body {
     font-size: 20px;
     border-radius: 10px;
 }
+
+/* ================= NAV CLOSE (X) ================= */
+
+#nav-close {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+
+  cursor: pointer;
+  user-select: none;
+  z-index: 14;
+}
+
+#nav-close:hover {
+  color: #ffd86b;
+}
+

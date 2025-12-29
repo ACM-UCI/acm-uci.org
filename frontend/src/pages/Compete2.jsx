@@ -2,6 +2,7 @@ import "../css/home2.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+/* ---------------- DATA ---------------- */
 
 const NAV_ITEMS = [
   { id: "learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/learn" },
@@ -18,6 +19,7 @@ const SPEECH_LOGOS = [
   "home2/kotlin.png"
 ];
 
+/* ---------------- COMPONENT ---------------- */
 
 export default function Home2() {
   const navigate = useNavigate();
@@ -26,8 +28,6 @@ export default function Home2() {
   const [fade, setFade] = useState(false);
   const [activeMascot, setActiveMascot] = useState(null);
   const [bubbleX, setBubbleX] = useState(0);
-  const [sideOpen, setSideOpen] = useState(false);
-
 
   useEffect(() => {
     const interval = setInterval(() => setFade(f => !f), 5000);
@@ -37,11 +37,9 @@ export default function Home2() {
   function handleMascotEnter(e, id) {
     const rect = e.currentTarget.getBoundingClientRect();
     setBubbleX(rect.x + 50);
-    console.log("ENTERED")
     setActiveMascot(id);
   }
 
-  
   return (
     <div id="home2">
 
@@ -54,21 +52,11 @@ export default function Home2() {
           <h1>UCI</h1>
         </div>
 
-<div
-  id="nav-dropdown"
-  onClick={() => setSideOpen(o => !o)}
->
-  {sideOpen ? (
-    <div id="nav-close">✕</div>
-  ) : (
-    <>
-      <div id="dropdown-line" />
-      <div id="dropdown-line" />
-      <div id="dropdown-line" />
-    </>
-  )}
-</div>
-
+        <div id="nav-dropdown">
+          <div id="dropdown-line" />
+          <div id="dropdown-line" />
+          <div id="dropdown-line" />
+        </div>
 
         <div id="navbar-options">
           {NAV_ITEMS.map((item, i) => (
@@ -113,33 +101,6 @@ export default function Home2() {
         </div>
       </div>
 
-      {/* ---------------- SIDE PANEL ---------------- */}
-
-<div
-  id="side-panel-overlay"
-  className={sideOpen ? "open" : ""}
-  onClick={() => setSideOpen(false)}
-/>
-
-<div
-  id="side-panel"
-  className={sideOpen ? "open" : ""}
->
-  {NAV_ITEMS.map(item => (
-    <div
-      key={item.id}
-      className="side-panel-item"
-      onClick={() => {
-        setSideOpen(false);
-        navigate(item.href);
-      }}
-    >
-      {item.label}
-    </div>
-  ))}
-</div>
-
-
       {/* ---------------- IMAGE PREVIEW ---------------- */}
 
       <div id="acm-preview">
@@ -175,21 +136,11 @@ export default function Home2() {
       {/* ---------------- SPEECH BUBBLE ---------------- */}
 
       {activeMascot !== null && (
-        <div>
-          <h1 style={{color: "red", zIndex: 40}}>d</h1>
-        
-        <div id="speech-bubble" style={{ left: bubbleX, zIndex: 20 }}>
-          <script>console.log("HI")</script>
-          <img id="sb-bg" src="home2/chat-bubble.png" />
-          <img id="sb-pl" src={SPEECH_LOGOS[activeMascot]} />
-        </div></div>
-      )}
-
-      <div id="speech-bubble" style={{ left: bubbleX, zIndex: 20 }}>
-          <script>console.log("HI")</script>
+        <div id="speech-bubble" style={{ left: bubbleX }}>
           <img id="sb-bg" src="home2/chat-bubble.png" />
           <img id="sb-pl" src={SPEECH_LOGOS[activeMascot]} />
         </div>
+      )}
 
       {/* ---------------- MASCOTS ---------------- */}
 

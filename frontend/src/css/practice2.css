@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#acmcenterlogo {
+    max-width: 70px;
+    filter: drop-shadow(0 0 15px #0ff);
+
+}
+
+#navbar-logo h1 {
+    text-shadow: 0 0 25px #0ff;
+    color: white;
+}
+
+#navbar-logo {
+    width: 100%;
+    height: 100px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: 
+#162036
+;
+    margin: 0; 
+}  
+
+#navbar {
+    display: flex; 
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 150px;
+}
+
+#nav-dropdown {
+    position: absolute;
+    right: 30px;
+    top: 20px; 
+    height: 60px;
+    width: 60px;
+    display: none; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#dropdown-line {
+    width: 50px; 
+    height: 5px; 
+    background-color: white;
+}
+
+#navbar-options {
+    width: 100%;
+    height: 50px;
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 2px solid white;
+    margin: 0; 
+    padding: 0; 
+}
+
+@media (max-width: 1024px) {
+    #navbar-options {
+        display: none; 
+    }
+
+    #navbar {
+        height: 100px; 
+    }
+
+    #navbar-logo {
+        padding-left: 30px; 
+        justify-content: flex-start;
+    }
+
+    #nav-dropdown {
+        display: flex; 
+    }
+
+    #navbar-popup {
+        display: none;
+    }
+}
+
+
+#learn-nav, #practice-nav, #compete-nav, 
+#board-nav, #contact-nav {
+    height: 50px;
+    width: 20%;
+    
+    background-color: #26478c;
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar-popup {
+    background-color: #ffd86b;
+    border-bottom: white solid 4px;
+    border-left: white solid 4px;
+    border-right: white solid 4px;
+    width: 20%;
+    height: 100px;
+    position: absolute;
+    left: 0px;
+    top: 150px; 
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: Arial;
+    z-index: 4;
+    font-size: 30px;
+}
+
+
+#central-content {
+    width: 100%;
+    height: 600px;
+    background-color: #50c6de;
+     position: absolute;
+     top: 150px;
+    display: flex;
+    justify-content: center;
+        border-bottom: #162036 solid 4px;
+}
+
+#cc-text-wrapper {
+    width: 50%;
+    height: 400px;
+     position: absolute;
+     top: 100px;
+    color: #162036;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border: #162036 solid 4px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    z-index: 4;
+
+}
+
+#cc-text-wrapper h1 {
+    font-size: 80px;
+}
+
+#cc-text-wrapper h2 {
+    font-size: 30px;
+}
+#cc-text-wrapper p {
+    font-size: 20px;
+}
+
+#cc-h1 {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+#cc-h1 img {
+    width: 200px;
+    height: 200px;
+    border-left: lightblue solid 3px;
+     border-bottom: lightblue solid 3px;
+}
+
+#thinking-bg {
+    width: 100%;
+    height: 600px;
+     position: absolute;
+     top: 150px;
+}
+
+#thinking-bg img {
+    width: 100%;
+    height: 595px;
+    object-fit: cover;
+    filter: invert(100%) opacity(50%);
+}
+
+#main-content {
+    width: 100%;
+    height: 2000px;
+    background-color: white;
+     position: absolute;
+     top: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+#weekdisplay {
+    height: 1600px;
+    width: 100vw;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-top: 100px;
+}
+
+#row1, #row2, #row3 {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#week1, #week2, #week3, #week4, #week5, #week6, 
+#week7, #week8, #week9, #week10 {
+    width: 400px;
+    height: 400px;
+    background-color: pink;
+
+}
+
+.weekimg {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.week-card {
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.week-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.week-card:hover .week-card-inner {
+  transform: rotateY(180deg);
+}
+
+.week-card-front,
+.week-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.week-card-front h3,
+.week-card-front p {
+  margin: 10px 0;
+}
+
+.week-card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+
+.week-card-back a {
+  margin-top: 15px;
+  font-weight: bold;
+}
