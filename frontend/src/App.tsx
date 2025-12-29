@@ -12,6 +12,7 @@ import Board2 from "./pages/Board2.jsx";
 import Compete2 from "./pages/Compete2.jsx";
 
 import Home3 from "./pages/Home3.jsx";
+import Learn3 from "./pages/Learn3.jsx";
 
 import Layout from "./extra/Layout"
 import { Routes, Route } from "react-router";
@@ -27,6 +28,7 @@ export default function App() {
       <Route path="compete2secret" element={<Compete2/>}/>
 
       <Route path="home3secret" element={<Home3/>}/>
+      <Route path="learn3secret" element={<Learn3/>}/>
     </Route>
     <Route path="/" element={<Layout />}>
       <Route index element={<Home/>}></Route>
