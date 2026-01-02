@@ -30,11 +30,11 @@ export default function Compete3() {
   return (
     <div>
       <nav id="h3navbar">
-        <div id="h3navbar-logo" onMouseEnter={() => setActiveNav(null)}>
-          <h1>ACM</h1>
-          <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
-          <h1>UCI</h1>
-        </div>
+                <div id="h3navbar-logo" onClick={() => { navigate('/home3secret') }} onMouseEnter={() => setActiveNav(null)}>
+                    <h1>ACM</h1>
+                    <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
+                    <h1>UCI</h1>
+                </div>
 
         <div
           id="h3nav-dropdown"
@@ -252,7 +252,7 @@ export default function Compete3() {
         </div>
         <div id="stillnotsatisfied">
           <h2>Still Not Satisified?</h2>
-          <p>Check out our <a href="/#learn">learn</a> tab for additional resources and our <a href="/#practice">practice</a> tab for presentations and practice problems!</p>
+          <p>Check out our <a href="/#learn3secret">learn</a> tab for additional resources and our <a href="/#practice3secret">practice</a> tab for presentations and practice problems!</p>
         </div>
       </div>
       <div id="c3-hall_of_champions">

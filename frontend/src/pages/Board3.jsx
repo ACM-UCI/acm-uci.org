@@ -67,11 +67,11 @@ export default function Board() {
   return (
     <div>
       <nav id="h3navbar">
-        <div id="h3navbar-logo" onMouseEnter={() => setActiveNav(null)}>
-          <h1>ACM</h1>
-          <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
-          <h1>UCI</h1>
-        </div>
+                <div id="h3navbar-logo" onClick={() => { navigate('/home3secret') }} onMouseEnter={() => setActiveNav(null)}>
+                    <h1>ACM</h1>
+                    <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
+                    <h1>UCI</h1>
+                </div>
 
         <div
           id="h3nav-dropdown"
