@@ -402,7 +402,6 @@ body {
 @media (max-width: 1024px) {
 
     #altweekdisplay {
-    height: 5400px;
     width: 100vw;
     display: flex;
     flex-direction: column;
