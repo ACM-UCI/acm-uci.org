@@ -44,6 +44,8 @@ export default function Home3() {
 
     return (
         <div>
+            <audio autoplay loop>
+  <source src="ethernight.mp3" type="audio/mpeg"></source> </audio>
             <nav id="h3navbar">
                 <div id="h3navbar-logo" onMouseEnter={() => setActiveNav(null)}>
                     <h1>ACM</h1>
