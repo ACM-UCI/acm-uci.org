@@ -2,12 +2,11 @@ import "../css/contact.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const NAV_ITEMS = [
-    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
-    { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
-    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
-    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
+    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn3secret" },
+    { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice3secret" },
+    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete3secret" },
+    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board3secret" },
     { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
 ];
 

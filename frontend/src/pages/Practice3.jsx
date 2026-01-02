@@ -20,8 +20,8 @@ function urlFor(source) {
 function getCurrentQuarterAndYear() {
   const now = new Date();
 
-  const year = now.getFullYear();
-  const month = now.getMonth(); // 0 = Jan
+  let year = now.getFullYear();
+  let month = now.getMonth(); // 0 = Jan
 
   let quarter;
   if (month >= 8) quarter = '0'; // Sep-Dec → Fall
@@ -30,15 +30,19 @@ function getCurrentQuarterAndYear() {
 
   console.log(`deleting after but the year and quarter are ${year} ${quarter}`)
 
+  // hardcoding for display purposes :D 
+  year = 2025;
+  quarter = '0';
+
   return { year, quarter };
 }
 
 
 const NAV_ITEMS = [
-    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
-    { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
-    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
-    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
+    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn3secret" },
+    { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice3secret" },
+    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete3secret" },
+    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board3secret" },
     { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
 ];
 

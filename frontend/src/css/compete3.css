@@ -246,6 +246,7 @@ body {
     z-index: 4;
     gap: 10px;
     justify-content: space-evenly;
+    padding: 10px;
 }
 
 #competepng {

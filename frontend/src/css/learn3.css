@@ -250,9 +250,12 @@ body {
     justify-content: space-between;
     background-color: white;
     border: #162036 solid 4px;
+    
+    padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
     z-index: 4;
+    
 }
 
 #l3-cc-h1 {
