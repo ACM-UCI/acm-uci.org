@@ -244,3 +244,31 @@ body {
     background-color: #50c6de;
     border: white solid 5px;
 }
+
+@media (max-width: 1024px) {
+    #contact-button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        height: 1800px;
+
+    }
+
+    #contact-button-container img {
+        width: 40vw;
+    }
+    .contact-individual-container {
+        width: 43vw;
+        height: 43vw;
+    }
+}
+
+@media (max-width: 740px) {
+        #contact-button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        height: 1200px;
+
+    }
+}
