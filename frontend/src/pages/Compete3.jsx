@@ -9,6 +9,8 @@ import Col from "react-bootstrap/Col";
 
 
 
+
+
 const NAV_ITEMS = [
   { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
   { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
