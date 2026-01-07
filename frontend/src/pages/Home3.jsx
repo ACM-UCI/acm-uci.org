@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 
 const NAV_ITEMS = [
-    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn3secret" },
-    { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice3secret" },
-    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete3secret" },
-    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board3secret" },
-    { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
+  { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
+  { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
+  { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
+  { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
+  { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
 ];
+
 
 const SPEECH_LOGOS = [
     "home2/cpp.png",
@@ -48,7 +49,7 @@ export default function Home3() {
             <audio autoplay loop>
   <source src="ethernight.mp3" type="audio/mpeg"></source> </audio>
             <nav id="h3navbar">
-                <div id="h3navbar-logo" onClick={() => { navigate('/home3secret') }} onMouseEnter={() => setActiveNav(null)}>
+                <div id="h3navbar-logo" onClick={() => { navigate('/') }} onMouseEnter={() => setActiveNav(null)}>
                     <h1>ACM</h1>
                     <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
                     <h1>UCI</h1>

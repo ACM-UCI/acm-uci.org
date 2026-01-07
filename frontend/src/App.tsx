@@ -25,7 +25,18 @@ import { Routes, Route } from "react-router";
 export default function App() {
   return (
     <Routes>
+       <Route path="/">
+             <Route index element={<Home3/>}/>
+      <Route path="learn" element={<Learn3/>}/>
+      <Route path="practice" element={<Practice3/>}/>
+      <Route path="compete" element={<Compete3/>}/>
+      <Route path="board" element={<Board3/>}/>
+
+      <Route path="contact" element={<Contact/>}/>
+       </Route>
+          {/* for testing 
     <Route path="/">
+
       <Route path="home2secret" element={<Home2/>}/>
       <Route path="learn2secret" element={<Learn2/>}/>
       <Route path="practice2secret" element={<Practice2/>}/>
@@ -48,6 +59,7 @@ export default function App() {
       <Route path="practice" element={<Practice/>}/>
       
     </Route>
+    */}
     </Routes>
   );
 }
