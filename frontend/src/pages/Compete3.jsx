@@ -323,7 +323,7 @@ export default function Compete3() {
                   Thomas Neil (graduated)
                 </li>
                 <li>
-                  Elijah Huang (4th year)
+                  Elijah Huang (dropped out)
                 </li>
               </ul>
             </div>

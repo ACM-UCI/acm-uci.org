@@ -15,11 +15,11 @@ const urlFor = (source) => builder.image(source);
 
 
 const NAV_ITEMS = [
-    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn3secret" },
-    { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice3secret" },
-    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete3secret" },
-    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board3secret" },
-    { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
+  { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn3secret" },
+  { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice3secret" },
+  { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete3secret" },
+  { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board3secret" },
+  { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
 ];
 
 
@@ -29,7 +29,33 @@ export default function Board() {
   const [activeNav, setActiveNav] = useState(null);
   const [sideOpen, setSideOpen] = useState(false);
 
-    const [members, setMembers] = useState([]);
+  const [members, setMembers] = useState([]);
+
+  /* another time... */
+  const [b3ActiveMascot, setB3ActiveMascot] = useState(null);
+  const [b3BubbleX, setB3BubbleX] = useState(0);
+  const [b3BubbleY, setB3BubbleY] = useState(0);
+
+  
+  function handleMascotEnter(e, member_title) {
+    if (member_title in quotes) {
+
+      const rect = e.currentTarget.getBoundingClientRect();
+
+      setB3BubbleX(rect.x + 300);
+      setB3BubbleY(rect.y + 100);
+      setB3ActiveMascot(member_title);
+    }
+  }
+
+  const quotes = {
+    "Effie": "Everything is greedy. If it's not, that's just greedy plus regret.",
+    "Cindy": "If you're thinking about greedy, you're actually thinking about (gree)dynamic programming"
+  }
+
+
+
+
 
 
 
@@ -64,14 +90,21 @@ export default function Board() {
   );
 
 
+
+
   return (
     <div>
+      {/* maybe later... bugs...!
+      {b3ActiveMascot != null &&
+        <div id="b3-speech-bubble" style={{ left: b3BubbleX, top: b3BubbleY }}>
+          <img id="b3-sb-bg" src="home2/chat-bubble.png" />
+          <p>{quotes[b3ActiveMascot]}</p></div>} */}
       <nav id="h3navbar">
-                <div id="h3navbar-logo" onClick={() => { navigate('/home3secret') }} onMouseEnter={() => setActiveNav(null)}>
-                    <h1>ACM</h1>
-                    <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
-                    <h1>UCI</h1>
-                </div>
+        <div id="h3navbar-logo" onClick={() => { navigate('/home3secret') }} onMouseEnter={() => setActiveNav(null)}>
+          <h1>ACM</h1>
+          <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
+          <h1>UCI</h1>
+        </div>
 
         <div
           id="h3nav-dropdown"
@@ -156,28 +189,38 @@ export default function Board() {
           <div id="b3-cc-bottomrow">
             <h2>
               ACM @ UCI wouldn’t be <em>possible</em> without our hardworking board members
-              </h2>
+            </h2>
             <p>
               Check out the <em>agents</em> of ACM below, and if you’re interested, get involved and join the team!
-  
+
 
             </p>
           </div>
 
         </div>
-           </div>
-              <div id="b3-main">
-
-                        <Executive members={executive} />
-                        <div className="board-line1"></div>
-        <Supporting members={support} />
-         <div className="board-line2"></div>
-        <Advisory members={advisory} />
-              </div>
-        
- 
-
       </div>
+      <div id="b3-main">
+
+
+
+
+        <Executive handleQuote={handleMascotEnter} setB3Mascot={setB3ActiveMascot} members={executive} />
+        <div className="board-line1"></div>
+        <Supporting handleQuote={handleMascotEnter} setB3Mascot={setB3ActiveMascot} members={support} />
+        <div className="board-line2"></div>
+        <Advisory handleQuote={handleMascotEnter} setB3Mascot={setB3ActiveMascot} members={advisory} />
+        <div className="quotes-section">
+          <h3>Quotes from the Board:</h3>
+          <hr></hr>
+          {Object.entries(quotes).map(([person, quote]) => (
+            <div><p>{person}: "{quote}"</p></div>))}
+         
+        </div>
+      </div>
+
+
+
+    </div>
 
 
 
@@ -188,7 +231,7 @@ export default function Board() {
 }
 
 
-function MemberCard({ member }) {
+function MemberCard({ member, handleQuote, setB3Mascot }) {
   if (!member) return null;
 
   const formatPosition = (position) => {
@@ -200,70 +243,78 @@ function MemberCard({ member }) {
     );
   };
 
-  return (
-    <div className="member-card">
-      <div className="member-image-wrapper">
-        <img
-          src={urlFor(member.image).url()}
-          alt={member.name}
-          className="member-card-img"
-        />
-      </div>
 
-      <div className="member-info">
-        <h1 className="member-name">{member.name}</h1>
-        <h1 className="member-position">
-          {formatPosition(member.position)}
-        </h1>
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+  return (
+    <div className="member-card-wrapper" >
+{/* maybe later onMouseEnter={(e) => handleQuote(e, member['position'])}
+        onMouseLeave={() => setB3Mascot(null)} */}
+
+      <div  className="member-card"
+      >
+        <div className="member-image-wrapper"         >
           <img
-            src="/board/linkedin.png"
-            alt="LinkedIn"
-            className="linkedin-icon"
+            src={urlFor(member.image).url()}
+            alt={member.name}
+            className="member-card-img"
           />
-        </a>
+        </div>
+
+        <div className="member-info">
+          <h1 className="member-name">{member.name}</h1>
+          <h1 className="member-position">
+            {formatPosition(member.position)}
+          </h1>
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/board/linkedin.png"
+              alt="LinkedIn"
+              className="linkedin-icon"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
 }
 
-const Executive = ({ members }) => (
+const Executive = ({ members, handleQuote, setB3Mascot }) => (
   <div className="b3-executive_wrapper my-5">
 
-      <h1 className="section-title">Executive Staff</h1>
-      <div className="b3-executive_staff mt-4">
+    <h1 className="section-title">Executive Staff</h1>
+    <div className="b3-executive_staff mt-4">
 
-          {members.map((m, i) => (
-              <MemberCard member={m} />
-          ))}
-      </div>
+      {members.map((m, i) => (
+        <MemberCard handleQuote={handleQuote} setB3Mascot={setB3Mascot} member={m} />
+      ))}
+    </div>
   </div>
 );
 
-const Supporting = ({ members }) => (
+const Supporting = ({ members, handleQuote, setB3Mascot }) => (
   <div className="b3-supporting_wrapper my-5">
 
-      <h1 className="section-title">Supporting Staff</h1>
-      <div className="b3-supporting_staff mt-4">
+    <h1 className="section-title">Supporting Staff</h1>
+    <div className="b3-supporting_staff mt-4">
 
-          {members.map((m, i) => (
-              <MemberCard member={m} />
-          ))}
-      </div>
+      {members.map((m, i) => (
+        <MemberCard handleQuote={handleQuote} setB3Mascot={setB3Mascot} member={m} />
+      ))}
+    </div>
   </div>
 );
 
-const Advisory = ({ members }) => (
+const Advisory = ({ members, handleQuote, setB3Mascot }) => (
   <div className="b3-advisory_wrapper my-5">
-      <h1 className="section-title">Advisors</h1>
-      <div className="b3-advisors mt-4">
-          {members.map((m, i) => (
-              <MemberCard member={m} />
-          ))}
-      </div>
+    <h1 className="section-title">Advisors</h1>
+    <div className="b3-advisors mt-4">
+      {members.map((m, i) => (
+        <MemberCard handleQuote={handleQuote} setB3Mascot={setB3Mascot} member={m} />
+      ))}
+    </div>
   </div>
 );

@@ -306,16 +306,15 @@ body {
 
 #weekdisplay {
     height: 2600px;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     gap: 100px;
     padding-top: 100px;
     justify-content: space-evenly;
     align-items: center;
-    background-color: white;
     padding-bottom: 100px;
     
+    box-sizing: border-box;
 }
 
 #weekdisplay a {
@@ -402,14 +401,12 @@ body {
 @media (max-width: 1024px) {
 
     #altweekdisplay {
-    width: 100vw;
     display: flex;
     flex-direction: column;
     gap: 100px;
     padding-top: 100px;
     justify-content: space-evenly;
     align-items: center;
-    background-color: white;
     padding-bottom: 100px;
 
     }
@@ -422,20 +419,88 @@ body {
 
 #week1, #week2, #week3, #week4, #week5, #week6, 
 #week7, #week8, #week9, #week10 {
-    width: 60vw;
-    height: 60vw;
+    width: 80vw;
+    height: 80vw;
 
 }
 
 .weekimg {
-    width: 50vw;
-    height: 40vw;
+    width: 65vw;
+    height: 65vw;
     object-fit: contain;
 }
 
 .week-card {
-    width: 60vw;
-    height: 60vw;
+    width: 80vw;
+    height: 80vw;
   perspective: 1000px;
 }
 }
+
+#p3-event-buttons {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+#p3-event-space {
+    background-color: white;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+}
+
+#p3-event-space-inner {
+    background-color: #162036;
+    width: 100vw;
+    margin: 50px;
+    
+    border-radius: 20px;
+}
+
+#winter-quarter-substitute-text {
+    text-align: center; 
+    color: white;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+
+}
+
+@media (max-width: 1024px) {
+    #p3-event-space-inner {
+        margin: 20px
+    }
+}
+
+@media (max-width: 440px) {
+    #p3-event-space-inner {
+        margin: 10px
+    }
+
+    #week1, #week2, #week3, #week4, #week5, #week6, 
+#week7, #week8, #week9, #week10 {
+    height: 85vh;
+
+}
+
+
+.week-card {
+    height: 85vh;
+}
+}
+
+#p3-event-buttons button {
+    border-radius: 10px;
+    background-color: #26478c;
+    color: #ffd86b;
+    height: 40px;
+    width: 120px;
+}
+

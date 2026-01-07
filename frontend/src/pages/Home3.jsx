@@ -31,9 +31,10 @@ export default function Home3() {
 
 
     function handleMascotEnter(e, id) {
+       
         const rect = e.currentTarget.getBoundingClientRect();
         setBubbleX(rect.x + 30);
-        setActiveMascot(id);
+         setActiveMascot(id);
     }
 
 

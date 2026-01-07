@@ -381,3 +381,125 @@ body {
     border: #50c6de dashed 4px;
     width: 100vw;
 }
+
+
+
+/* === Card sizing === */
+.b3-member-card {
+  width: 280px;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 4;
+}
+
+/* Center cards inside bootstrap columns */
+.executive_staff .col,
+.supporting_staff .col,
+.advisors .col {
+  display: flex;
+  justify-content: center;
+}
+
+/* === Image === */
+.b3-member-image-wrapper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.b3-member-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* === Hidden info === */
+.b3-member-info {
+  position: absolute;
+  bottom: -130px;
+  left: 0;
+  width: 100%;
+  height: 130px;
+
+  background-color: white;
+  border-top: 3px solid #162036;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  transition: bottom 0.3s ease;
+}
+
+/* === Text === */
+.b3-member-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+.b3-member-position {
+  font-size: 14px;
+  margin: 0;
+  color: #555;
+}
+
+.linkedin-icon {
+  width: 24px;
+  margin-top: 8px;
+}
+
+/* === Hover animation === */
+.b3-member-card:hover .member-image-wrapper {
+  transform: translateY(-40px);
+}
+
+.b3-member-card:hover .member-info {
+  bottom: 0;
+}
+
+.quotes-section {
+    background-color: #26478c;
+    border-top: #162036 solid 4px;
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    color: white;
+}
+
+/* maybe later
+
+#b3-speech-bubble {
+    width: 150px;
+    height: 120px;
+
+    bottom: 170px;
+    position: absolute;
+    left: 0px;
+    z-index: 12;
+
+}
+
+#b3-sb-bg {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    filter: grayscale(100%) brightness(150%)
+}
+
+#b3-sb-pl {
+    width: 60px;
+    top: 30px;
+    left: 45px;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+}*/
+
