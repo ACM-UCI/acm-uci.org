@@ -73,31 +73,32 @@ export default function Practice3() {
 
   useEffect(() => {
     async function fetchData() {
+      let year = 2026;
+      let quarter = '1';
+      setFallQuarter(false);
       if (eventSpace == "fall") {
-        const year = 2025;
-        const quarter = '0';
+        year = 2025;
+        quarter = '0';
+        setFallQuarter(true);
+      } 
 
-        const wp = await client.fetch(
-          `*[_type == "weeklyProblem" && year == $year && quarter == $quarter][0]{
+      /* not really using these
+      const wp = await client.fetch(
+        `*[_type == "weeklyProblem" && year == $year && quarter == $quarter][0]{
               ...,
               ${[...Array(10)].map((_, i) => `week${i + 1}[]->`).join(',')}
             }`,
-          { year, quarter }
-        );
+        { year, quarter }
+      );*/ 
 
-        const pres = await client.fetch(
-          `*[_type == "presentation" && quarter == $quarter]`,
-          { quarter }
-        );
-
-        setWeeklyProblems(wp);
-        setPresentations(pres);
-
-        setFallQuarter(true);
-      } else {
-        setFallQuarter(false);
-
-      }
+      const pres = await client.fetch(
+        `*[_type == "presentation" && year == $year && quarter == $quarter]`,
+        { year, quarter }
+      );
+/*
+      console.log(wp); 
+      setWeeklyProblems(wp);*/
+      setPresentations(pres);
 
     }
 
@@ -145,11 +146,11 @@ export default function Practice3() {
   return (
     <div>
       <nav id="h3navbar">
-                <div id="h3navbar-logo" onClick={() => { navigate('/') }} onMouseEnter={() => setActiveNav(null)}>
-                    <h1>ACM</h1>
-                    <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
-                    <h1>UCI</h1>
-                </div>
+        <div id="h3navbar-logo" onClick={() => { navigate('/') }} onMouseEnter={() => setActiveNav(null)}>
+          <h1>ACM</h1>
+          <img id="h3acmcenterlogo" src="home2/acm-uci.svg" />
+          <h1>UCI</h1>
+        </div>
 
         <div
           id="h3nav-dropdown"
@@ -246,125 +247,225 @@ export default function Practice3() {
 
       <div id="p3-event-buttons">
         <button onClick={() => setEventSpace("fall")}>Fall 2025</button>
-        <button onClick={() => setEventSpace("winter")}>Winter 2025</button>
+        <button onClick={() => setEventSpace("winter")}>Winter 2026</button>
       </div>
 
       <div id="p3-event-space">
 
         <div id="p3-event-space-inner">
 
-        {!isFallQuarter && <div id="winter-2026-events">
-          <div id="winter-quarter-substitute-text">
-          <p>❄️&nbsp;First Meeting of Winter Quarter will be on Wednesday, 1/7!&nbsp;❄️</p>
-          </div>
-        </div>}
+          {!isFallQuarter && <div id="winter-2026-events">
 
-        {isFallQuarter && <div id="fall-2025-events">
+            <div id="altweekdisplay">
+              {rows2.map((rowWeeks, rowIdx) => (
+                <div key={rowIdx} id={`row${rowIdx + 1}`}>
+                  {rowWeeks.map((weekNum) => {
+                    const presentation = presentations.find(
+                      (p) => p.week === weekNum
+                    );
 
+                    if (!presentation) return null;
 
-          <div id="altweekdisplay">
-            {rows2.map((rowWeeks, rowIdx) => (
-              <div key={rowIdx} id={`row${rowIdx + 1}`}>
-                {rowWeeks.map((weekNum) => {
-                  const presentation = presentations.find(
-                    (p) => p.week === weekNum
-                  );
+                    return (
+                      <div key={weekNum} id={`week${weekNum}`} className="week-card">
+                        <div className="week-card-inner">
 
-                  if (!presentation) return null;
+                          {/* FRONT */}
+                          <div className="week-card-front">
+                            <img
+                              className="weekimg"
+                              src={
+                                presentation.image
+                                  ? urlFor(presentation.image).url()
+                                  : ""
+                              }
+                              alt={presentation.title}
+                            />
+                            <h3>Week {weekNum}</h3>
+                            <p>{presentation.title}</p>
+                          </div>
 
-                  return (
-                    <div key={weekNum} id={`week${weekNum}`} className="week-card">
-                      <div className="week-card-inner">
+                          {/* BACK */}
+                          <div className="week-card-back">
+                            <p>{presentation.description}</p>
+                            {presentation.url && (
+                              <a
+                                href={presentation.url}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                VIEW SLIDES
+                              </a>
+                            )}
+                          </div>
 
-                        {/* FRONT */}
-                        <div className="week-card-front">
-                          <img
-                            className="weekimg"
-                            src={
-                              presentation.image
-                                ? urlFor(presentation.image).url()
-                                : ""
-                            }
-                            alt={presentation.title}
-                          />
-                          <h3>Week {weekNum}</h3>
-                          <p>{presentation.title}</p>
                         </div>
-
-                        {/* BACK */}
-                        <div className="week-card-back">
-                          <p>{presentation.description}</p>
-                          {presentation.url && (
-                            <a
-                              href={presentation.url}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              VIEW SLIDES
-                            </a>
-                          )}
-                        </div>
-
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
 
-          <div id="weekdisplay">
-            {rows.map((rowWeeks, rowIdx) => (
-              <div key={rowIdx} id={`row${rowIdx + 1}`}>
-                {rowWeeks.map((weekNum) => {
-                  const presentation = presentations.find(
-                    (p) => p.week === weekNum
-                  );
+            <div id="weekdisplay">
+              {rows.map((rowWeeks, rowIdx) => (
+                <div key={rowIdx} id={`row${rowIdx + 1}`}>
+                  {rowWeeks.map((weekNum) => {
+                    const presentation = presentations.find(
+                      (p) => p.week === weekNum
+                    );
 
-                  if (!presentation) return null;
+                    if (!presentation) return null;
 
-                  return (
-                    <div key={weekNum} id={`week${weekNum}`} className="week-card">
-                      <div className="week-card-inner">
+                    return (
+                      <div key={weekNum} id={`week${weekNum}`} className="week-card">
+                        <div className="week-card-inner">
 
-                        {/* FRONT */}
-                        <div className="week-card-front">
-                          <img
-                            className="weekimg"
-                            src={
-                              presentation.image
-                                ? urlFor(presentation.image).url()
-                                : ""
-                            }
-                            alt={presentation.title}
-                          />
-                          <h3>Week {weekNum}</h3>
-                          <p>{presentation.title}</p>
+                          {/* FRONT */}
+                          <div className="week-card-front">
+                            <img
+                              className="weekimg"
+                              src={
+                                presentation.image
+                                  ? urlFor(presentation.image).url()
+                                  : ""
+                              }
+                              alt={presentation.title}
+                            />
+                            <h3>Week {weekNum}</h3>
+                            <p>{presentation.title}</p>
+                          </div>
+
+                          {/* BACK */}
+                          <div className="week-card-back">
+                            <p>{presentation.description}</p>
+                            {presentation.url && (
+                              <a
+                                href={presentation.url}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                VIEW SLIDES
+                              </a>
+                            )}
+                          </div>
+
                         </div>
-
-                        {/* BACK */}
-                        <div className="week-card-back">
-                          <p>{presentation.description}</p>
-                          {presentation.url && (
-                            <a
-                              href={presentation.url}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              VIEW SLIDES
-                            </a>
-                          )}
-                        </div>
-
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
 
-        </div>}
+          </div>}
+
+          {isFallQuarter && <div id="fall-2025-events">
+
+
+            <div id="altweekdisplay">
+              {rows2.map((rowWeeks, rowIdx) => (
+                <div key={rowIdx} id={`row${rowIdx + 1}`}>
+                  {rowWeeks.map((weekNum) => {
+                    const presentation = presentations.find(
+                      (p) => p.week === weekNum
+                    );
+
+                    if (!presentation) return null;
+
+                    return (
+                      <div key={weekNum} id={`week${weekNum}`} className="week-card">
+                        <div className="week-card-inner">
+
+                          {/* FRONT */}
+                          <div className="week-card-front">
+                            <img
+                              className="weekimg"
+                              src={
+                                presentation.image
+                                  ? urlFor(presentation.image).url()
+                                  : ""
+                              }
+                              alt={presentation.title}
+                            />
+                            <h3>Week {weekNum}</h3>
+                            <p>{presentation.title}</p>
+                          </div>
+
+                          {/* BACK */}
+                          <div className="week-card-back">
+                            <p>{presentation.description}</p>
+                            {presentation.url && (
+                              <a
+                                href={presentation.url}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                VIEW SLIDES
+                              </a>
+                            )}
+                          </div>
+
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+
+            <div id="weekdisplay">
+              {rows.map((rowWeeks, rowIdx) => (
+                <div key={rowIdx} id={`row${rowIdx + 1}`}>
+                  {rowWeeks.map((weekNum) => {
+                    const presentation = presentations.find(
+                      (p) => p.week === weekNum
+                    );
+
+                    if (!presentation) return null;
+
+                    return (
+                      <div key={weekNum} id={`week${weekNum}`} className="week-card">
+                        <div className="week-card-inner">
+
+                          {/* FRONT */}
+                          <div className="week-card-front">
+                            <img
+                              className="weekimg"
+                              src={
+                                presentation.image
+                                  ? urlFor(presentation.image).url()
+                                  : ""
+                              }
+                              alt={presentation.title}
+                            />
+                            <h3>Week {weekNum}</h3>
+                            <p>{presentation.title}</p>
+                          </div>
+
+                          {/* BACK */}
+                          <div className="week-card-back">
+                            <p>{presentation.description}</p>
+                            {presentation.url && (
+                              <a
+                                href={presentation.url}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                VIEW SLIDES
+                              </a>
+                            )}
+                          </div>
+
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+
+          </div>}
         </div>
 
       </div>

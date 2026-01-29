@@ -42,6 +42,12 @@ export default defineType({
             validation: (Rule) => Rule.required()
         }),
         defineField({
+            name: "year",
+            title: "Year",
+            type: "number",
+            validation: (Rule) => Rule.required()
+        }),
+        defineField({
             name: "week",
             title: "Week",
             type: "number",
