@@ -107,9 +107,11 @@ export default function Practice3() {
     fetchData();
   }, [eventSpace]);
 
+  /*
+
   if (eventSpace == "fall" && !weeklyProblems) return (
     <Loading></Loading>
-  );
+  );*/
 
   const weeks = Array.from({ length: 10 }, (_, i) => i + 1);
 
@@ -254,8 +256,6 @@ export default function Practice3() {
 
         <div id="p3-event-space-inner">
 
-          {!isFallQuarter && <div id="winter-2026-events">
-
             <div id="altweekdisplay">
               {rows2.map((rowWeeks, rowIdx) => (
                 <div key={rowIdx} id={`row${rowIdx + 1}`}>
@@ -358,120 +358,11 @@ export default function Practice3() {
               ))}
             </div>
 
-          </div>}
-
-          {isFallQuarter && <div id="fall-2025-events">
-
-
-            <div id="altweekdisplay">
-              {rows2.map((rowWeeks, rowIdx) => (
-                <div key={rowIdx} id={`row${rowIdx + 1}`}>
-                  {rowWeeks.map((weekNum) => {
-                    const presentation = presentations.find(
-                      (p) => p.week === weekNum
-                    );
-
-                    if (!presentation) return null;
-
-                    return (
-                      <div key={weekNum} id={`week${weekNum}`} className="week-card">
-                        <div className="week-card-inner">
-
-                          {/* FRONT */}
-                          <div className="week-card-front">
-                            <img
-                              className="weekimg"
-                              src={
-                                presentation.image
-                                  ? urlFor(presentation.image).url()
-                                  : ""
-                              }
-                              alt={presentation.title}
-                            />
-                            <h3>Week {weekNum}</h3>
-                            <p>{presentation.title}</p>
-                          </div>
-
-                          {/* BACK */}
-                          <div className="week-card-back">
-                            <p>{presentation.description}</p>
-                            {presentation.url && (
-                              <a
-                                href={presentation.url}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                VIEW SLIDES
-                              </a>
-                            )}
-                          </div>
-
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
-
-            <div id="weekdisplay">
-              {rows.map((rowWeeks, rowIdx) => (
-                <div key={rowIdx} id={`row${rowIdx + 1}`}>
-                  {rowWeeks.map((weekNum) => {
-                    const presentation = presentations.find(
-                      (p) => p.week === weekNum
-                    );
-
-                    if (!presentation) return null;
-
-                    return (
-                      <div key={weekNum} id={`week${weekNum}`} className="week-card">
-                        <div className="week-card-inner">
-
-                          {/* FRONT */}
-                          <div className="week-card-front">
-                            <img
-                              className="weekimg"
-                              src={
-                                presentation.image
-                                  ? urlFor(presentation.image).url()
-                                  : ""
-                              }
-                              alt={presentation.title}
-                            />
-                            <h3>Week {weekNum}</h3>
-                            <p>{presentation.title}</p>
-                          </div>
-
-                          {/* BACK */}
-                          <div className="week-card-back">
-                            <p>{presentation.description}</p>
-                            {presentation.url && (
-                              <a
-                                href={presentation.url}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                VIEW SLIDES
-                              </a>
-                            )}
-                          </div>
-
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
-
-          </div>}
+          </div>
         </div>
 
       </div>
 
-
-    </div>
 
 
 
