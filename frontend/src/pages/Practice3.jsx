@@ -80,7 +80,10 @@ export default function Practice3() {
         year = 2025;
         quarter = '0';
         setFallQuarter(true);
-      } 
+      } else if (eventSpace == "spring") {
+        year = 2026;
+        quarter = '2';
+      }
 
       /* not really using these
       const wp = await client.fetch(
@@ -250,6 +253,7 @@ export default function Practice3() {
       <div id="p3-event-buttons">
         <button onClick={() => setEventSpace("fall")}>Fall 2025</button>
         <button onClick={() => setEventSpace("winter")}>Winter 2026</button>
+        <button onClick={() => setEventSpace("spring")}>Spring 2026</button>
       </div>
 
       <div id="p3-event-space">
