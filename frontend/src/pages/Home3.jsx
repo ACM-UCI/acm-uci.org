@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 
 const NAV_ITEMS = [
-  { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
-  { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
-  { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
-  { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
-  { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
+    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
+    { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
+    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
+    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
+    { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
 ];
 
 
@@ -32,10 +32,10 @@ export default function Home3() {
 
 
     function handleMascotEnter(e, id) {
-       
+
         const rect = e.currentTarget.getBoundingClientRect();
         setBubbleX(rect.x + 30);
-         setActiveMascot(id);
+        setActiveMascot(id);
     }
 
 
@@ -47,7 +47,7 @@ export default function Home3() {
     return (
         <div>
             <audio autoplay loop>
-  <source src="ethernight.mp3" type="audio/mpeg"></source> </audio>
+                <source src="ethernight.mp3" type="audio/mpeg"></source> </audio>
             <nav id="h3navbar">
                 <div id="h3navbar-logo" onClick={() => { navigate('/') }} onMouseEnter={() => setActiveNav(null)}>
                     <h1>ACM</h1>
@@ -201,10 +201,10 @@ export default function Home3() {
 
             <div id="h3-favorite-programming-language">
                 {activeMascot != null &&
-                            <div id="h3-speech-bubble" style={{ left: bubbleX }}>
-                <img id="h3-sb-bg" src="home2/chat-bubble.png" />
-                <img id="h3-sb-pl" src={SPEECH_LOGOS[activeMascot]} />
-            </div>}
+                    <div id="h3-speech-bubble" style={{ left: bubbleX }}>
+                        <img id="h3-sb-bg" src="home2/chat-bubble.png" />
+                        <img id="h3-sb-pl" src={SPEECH_LOGOS[activeMascot]} />
+                    </div>}
                 <div id="h3-favorite-programming-language-bottom">
                     <div id="h3-mascots">
                         {["chili.png", "squirrel.png", "anteater.png", "banana.png"].map(
@@ -229,37 +229,37 @@ export default function Home3() {
             </div>
 
 
-      <div id="h3-before-final-spacer" />
+            <div id="h3-before-final-spacer" />
 
-      <div id="h3-final-section">
-        <div id="h3-learn-link">
-          <img src="home2/learn.jpg" />
-          <div id="h3-learn-text">
-            <h1>LEARN</h1>
-            <p>Start competitive programming with C++, Java, or Python.</p>
-            <button onClick={() => navigate("/learn")}>VIEW</button>
-          </div>
-        </div>
+            <div id="h3-final-section">
+                <div id="h3-learn-link">
+                    <img src="home2/learn.jpg" />
+                    <div id="h3-learn-text">
+                        <h1>LEARN</h1>
+                        <p>Start competitive programming with C++, Java, or Python.</p>
+                        <button onClick={() => navigate("/learn")}>VIEW</button>
+                    </div>
+                </div>
 
-        <div id="h3-practice-link">
-          <img src="home2/twosum.png" />
-          <div id="h3-practice-text">
-            <h1>PRACTICE</h1>
-            <p>Solve problems on Codeforces, LeetCode, and Kattis.</p>
-            <button onClick={() => navigate("/practice")}>VIEW</button>
-          </div>
-        </div>
+                <div id="h3-practice-link">
+                    <img src="home2/twosum.png" />
+                    <div id="h3-practice-text">
+                        <h1>PRACTICE</h1>
+                        <p>Solve problems on Codeforces, LeetCode, and Kattis.</p>
+                        <button onClick={() => navigate("/practice")}>VIEW</button>
+                    </div>
+                </div>
 
-        <div id="h3-compete-link">
-          <img src="home2/competition.jpg" />
-          <div id="h3-competition-text">
-            <h1>COMPETE</h1>
-            <p>Try out for ICPC and compete internationally.</p>
-            <button onClick={() => navigate("/compete")}>VIEW</button>
-          </div>
+                <div id="h3-compete-link">
+                    <img src="home2/competition.jpg" />
+                    <div id="h3-competition-text">
+                        <h1>COMPETE</h1>
+                        <p>Try out for ICPC and compete internationally.</p>
+                        <button onClick={() => navigate("/compete")}>VIEW</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
 
     )
