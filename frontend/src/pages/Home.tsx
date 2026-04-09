@@ -69,7 +69,7 @@ function WhatIsACM() {
   const acm_short_description =
     "ACM@UCI is UCI’s official competitive programming club on campus.";
   const acm_meeting_time_loc =
-    "Meetings are every Wednesday from 6pm to 8pm in DBH 4011";
+    "Meetings are every Wednesday from 6pm to 8pm in DBH 3011";
   const acm_with_balloons = "/home/what_is_acm/acm_balloons_doodle.png";
 
   return (

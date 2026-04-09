@@ -130,7 +130,7 @@ export default function Home3() {
                         <h1>ACM @ UCI</h1>
                     </div>
                     <div id="h3hcc-paragraph-div">
-                        <p>Meetings in DBH 4011</p>
+                        <p>Meetings in DBH 3011</p>
                         <p>Wednesdays 6pm – 8pm</p>
                     </div>
                 </div>

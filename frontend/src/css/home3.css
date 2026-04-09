@@ -466,7 +466,7 @@ body {
     }
 }
 
-#h3-favorite-programming-language {
+#favorite-programming-language {
     background-color: #26478c;
     position: relative;
     height: 300px;
@@ -656,5 +656,17 @@ body {
     #h3-board-link {
         flex-direction: column;
     }
+
+    #h3-final-section img {
+        padding: 0;
+        width: 90vw;
+    }
+
+    #h3-competition-text,
+#h3-practice-text,
+#h3-learn-text {
+    width: 120%; 
+}
+
 
 }
