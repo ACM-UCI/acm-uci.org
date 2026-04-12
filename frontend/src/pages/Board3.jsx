@@ -231,7 +231,8 @@ export default function Board() {
 }
 
 
-function MemberCard({ member, handleQuote, setB3Mascot }) {
+
+function MemberCard({ member }) {
   if (!member) return null;
 
   const formatPosition = (position) => {
@@ -243,44 +244,38 @@ function MemberCard({ member, handleQuote, setB3Mascot }) {
     );
   };
 
-
-
   return (
-    <div className="member-card-wrapper" >
-{/* maybe later onMouseEnter={(e) => handleQuote(e, member['position'])}
-        onMouseLeave={() => setB3Mascot(null)} */}
+    <div className="member-card">
+      <div className="member-image-wrapper">
+        <img
+          src={urlFor(member.image).url()}
+          alt={member.name}
+          className="member-card-img"
+        />
+      </div>
 
-      <div  className="member-card"
-      >
-        <div className="member-image-wrapper"         >
+      <div className="member-info">
+        <h2 className="member-name">{member.name}</h2>
+        <p className="member-position">
+          {formatPosition(member.position)}
+        </p>
+
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
-            src={urlFor(member.image).url()}
-            alt={member.name}
-            className="member-card-img"
+            src="/board/linkedin.png"
+            alt="LinkedIn"
+            className="linkedin-icon"
           />
-        </div>
-
-        <div className="member-info">
-          <h1 className="member-name">{member.name}</h1>
-          <h1 className="member-position">
-            {formatPosition(member.position)}
-          </h1>
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/board/linkedin.png"
-              alt="LinkedIn"
-              className="linkedin-icon"
-            />
-          </a>
-        </div>
+        </a>
       </div>
     </div>
   );
 }
+
 
 const Executive = ({ members, handleQuote, setB3Mascot }) => (
   <div className="b3-executive_wrapper my-5">
