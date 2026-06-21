@@ -28,7 +28,7 @@ export default function App() {
        <Route path="/">
              <Route index element={<Home3/>}/>
       <Route path="learn" element={<Learn3/>}/>
-      <Route path="practice" element={<Practice3/>}/>
+      <Route path="presentations" element={<Practice3/>}/>
       <Route path="compete" element={<Compete3/>}/>
       <Route path="board" element={<Board3/>}/>
 

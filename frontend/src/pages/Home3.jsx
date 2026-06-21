@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const NAV_ITEMS = [
     { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
-    { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
+    { id: "h3practice-nav", label: "EVENTS", text: "View past events!", href: "/#presentations" },
     { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
     { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
     { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
@@ -246,7 +246,7 @@ export default function Home3() {
                     <div id="h3-practice-text">
                         <h1>PRACTICE</h1>
                         <p>Solve problems on Codeforces, LeetCode, and Kattis.</p>
-                        <button onClick={() => navigate("/practice")}>VIEW</button>
+                        <button onClick={() => navigate("/presentations")}>VIEW</button>
                     </div>
                 </div>
 

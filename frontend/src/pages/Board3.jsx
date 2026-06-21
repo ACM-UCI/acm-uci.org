@@ -15,11 +15,11 @@ const urlFor = (source) => builder.image(source);
 
 
 const NAV_ITEMS = [
-  { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
-  { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
-  { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
-  { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
-  { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
+    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
+    { id: "h3practice-nav", label: "EVENTS", text: "View past events!", href: "/#presentations" },
+    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
+    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
+    { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
 ];
 
 
@@ -50,7 +50,11 @@ export default function Board() {
 
   const quotes = {
     "Effie": "Everything is greedy. If it's not, that's just greedy plus regret.",
-    "Cindy": "If you're thinking about greedy, you're actually thinking about (gree)dynamic programming"
+    "Cindy": "If you're thinking about greedy, you're actually thinking about (gree)dynamic programming",
+    "Dongho": "I make problems for people.",
+    "Jerry": "The 3 stages of Jerry: Rock climber, Geometry Dash player, Gambler.",
+    "Alexa": "If I have 3 envy apples, and 4 cosmic crisp apples, how many permutations without repetition – hey, where did all my apples go?"
+    
   }
 
 

@@ -21,7 +21,7 @@ export default function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto open_nav">
             <Nav.Link href="#learn">Learn</Nav.Link>
-            <Nav.Link href="#practice">Practice</Nav.Link>
+            <Nav.Link href="#presentations">Events</Nav.Link>
             <Nav.Link href="#compete">Compete</Nav.Link>
             <Nav.Link href="#board">Board</Nav.Link>
             <Nav.Link target="_blank" href="https://discord.gg/MCtKPxC">

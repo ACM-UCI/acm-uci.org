@@ -38,11 +38,11 @@ function getCurrentQuarterAndYear() {
 
 
 const NAV_ITEMS = [
-  { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
-  { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
-  { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
-  { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
-  { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
+    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
+    { id: "h3practice-nav", label: "EVENTS", text: "View past events!", href: "/#presentations" },
+    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
+    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
+    { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
 ];
 
 
@@ -230,7 +230,7 @@ export default function Practice3() {
         <div id="p3-central-content-container">
           <div id="p3-cc-toprow">
             <div id="p3-cc-h1">
-              <h1>Practice</h1>
+              <h1>Events</h1>
             </div>
             <div id="p3-banana-image">
               <img src="practice/practice_doodle.jpg"></img>
@@ -238,11 +238,11 @@ export default function Practice3() {
           </div>
           <div id="p3-cc-bottomrow">
             <h2>
-              New practice problems and presentations at <em>every</em> meeting
+              New practice problems and presentations at <em>every</em> event
             </h2>
             <p>
-              Try your hand at the <em>easy</em> problems, then see how you fare with the <em>harder</em> ones!
-
+              Some are more <em>lecture</em> style, others are just <em>plain fun!</em>
+          
             </p>
           </div>
 

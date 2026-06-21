@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NAV_ITEMS = [
-  { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
-  { id: "h3practice-nav", label: "PRACTICE", text: "Practice fun problems!", href: "/#practice" },
-  { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
-  { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
-  { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
+    { id: "h3learn-nav", label: "LEARN", text: "Learn more about ACM!", href: "/#learn" },
+    { id: "h3practice-nav", label: "EVENTS", text: "View past events!", href: "/#presentations" },
+    { id: "h3compete-nav", label: "COMPETE", text: "Compete at ICPC!", href: "/#compete" },
+    { id: "h3board-nav", label: "BOARD", text: "Meet the Board!", href: "/#board" },
+    { id: "h3contact-nav", label: "CONTACT", text: "Find us on Discord and Instagram!", href: "/#contact" }
 ];
 
 export default function Home3() {
@@ -97,35 +97,66 @@ export default function Home3() {
             </div>
 
             <div id="contact-button-container">
+                <div id="contact-button-row">
 
-                <div
-                    className="contact-individual-container"
-                >
-                    <a target="_blank" href="https://discord.gg/MCtKPxC">
-                    <img src="logos/discord.svg" /></a>
+
+
+                    <div
+                        className="contact-individual-container"
+                    >
+                        <a target="_blank" href="https://discord.gg/MCtKPxC">
+                            <img src="logos/discord.svg" /></a>
+                    </div>
+                    <div
+                        className="contact-individual-container"
+                    >
+                        <a target="_blank" href="https://www.instagram.com/acm.uci/">
+                            <img src="logos/instagram.png" /></a>
+                    </div>
+                    <div
+                        className="contact-individual-container"
+                    >
+                        <a target="_blank" href="https://github.com/ACM-UCI/acm-uci.org"> <img src="logos/github.svg" /></a>
+
+                    </div>
+                    <div
+                        className="contact-individual-container"
+                    >
+                        <a href="mailto:acm@uci.edu"><img src="logos/email.svg" /></a>
+
+                    </div>
                 </div>
-                                <div
-                    className="contact-individual-container"
-                >
-                     <a target="_blank" href="https://www.instagram.com/acm.uci/">
-                    <img src="logos/instagram.png" /></a>
-                </div>
-                                                <div
-                    className="contact-individual-container"
-                >
-                    <a target="_blank" href="https://github.com/ACM-UCI/acm-uci.org"> <img src="logos/github.svg" /></a>
-                   
-                </div>
-                                                <div
-                    className="contact-individual-container"
-                >
-                    <a href="mailto:acm@uci.edu"><img src="logos/email.svg" /></a>
+
+
+                <div id="contact-drawings-row">
+
+
+                    <div
+                        className="contact-drawings"
+                    >
+                        <img src="board_drawings/acm_a.png"></img>
+                    </div>
+
+
+                    <div
+                        className="contact-drawings"
+                    >
+                        <img src="board_drawings/acm_c.png"></img>
+                    </div>
+
+
+                    <div
+                        className="contact-drawings"
+                    >
+                        <img src="board_drawings/acm_m.png"></img>
+                    </div>
                     
+
+
+
                 </div>
             </div>
-
         </div>
-
 
     )
 }

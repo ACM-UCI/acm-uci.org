@@ -219,13 +219,18 @@ body {
 
 #contact-button-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    padding-top: 150px;
+    padding-top: 200px;
     background-image: linear-gradient(#92e1f7, white); 
     height: 100vh;
+    gap: 150px;
 }
-#contact-button-container img {
-    width: 15vw;
+
+
+#contact-button-row {
+    display: flex; 
+    justify-content: space-evenly;
 }
 
 .contact-individual-container {
@@ -240,18 +245,36 @@ body {
     border: #50c6de solid 5px;
 }
 
+.contact-individual-container img {
+    width: 15vw;
+}
+
 .contact-individual-container:hover {
     background-color: #50c6de;
     border: white solid 5px;
 }
 
+#contact-drawings-row {
+    display: flex; 
+    justify-content: space-evenly;
+        padding-bottom: 150px;
+}
+
+.contact-drawings img {
+    width: 30vw;
+    height: 30vw;
+
+}
+
 @media (max-width: 1024px) {
-    #contact-button-container {
+    #contact-button-row {
         flex-direction: column;
         align-items: center;
         gap: 30px;
-        height: 1800px;
+    }
 
+    #contact-drawings-row {
+        display: none;
     }
 
     #contact-button-container img {
